@@ -24,7 +24,6 @@
 /* Begin PBXFileReference section */
 		0454DCD59AE6AC7967DB128B /* Pods-HealthyWayAdmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthyWayAdmin.release.xcconfig"; path = "Pods/Target Support Files/Pods-HealthyWayAdmin/Pods-HealthyWayAdmin.release.xcconfig"; sourceTree = "<group>"; };
 		0BB775AB7B4C686F843C26E8 /* Pods_LearnFirebaseAuthenticationAndAuthorization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearnFirebaseAuthenticationAndAuthorization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2421658EEE068D149FC76824 /* Pods-LearnFirebaseAuthenticationAndAuthorization.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnFirebaseAuthenticationAndAuthorization.release.xcconfig"; path = "Pods/Target Support Files/Pods-LearnFirebaseAuthenticationAndAuthorization/Pods-LearnFirebaseAuthenticationAndAuthorization.release.xcconfig"; sourceTree = "<group>"; };
 		3402AD9A212E4FE700A6C650 /* HealthyWayAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthyWayAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3402AD9B212E4FE700A6C650 /* HealthyWayAdmin copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "HealthyWayAdmin copy-Info.plist"; path = "/Users/waxcruz/Developer/HealthyWayAdminApp/HealthyWayAdmin/HealthyWayAdmin copy-Info.plist"; sourceTree = "<absolute>"; };
 		348B8733212CE251000E0320 /* CreateNewAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewAccountViewController.swift; sourceTree = "<group>"; };
@@ -39,7 +38,6 @@
 		34D4D8B621299A9B00BDAFF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34D4D8B821299A9B00BDAFF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34D4D8BE21299DE000BDAFF5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		471A926432EF96FD88D3EFE2 /* Pods-LearnFirebaseAuthenticationAndAuthorization.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnFirebaseAuthenticationAndAuthorization.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LearnFirebaseAuthenticationAndAuthorization/Pods-LearnFirebaseAuthenticationAndAuthorization.debug.xcconfig"; sourceTree = "<group>"; };
 		74E26648E50A8D60FDE8C298 /* Pods_HealthyWayAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthyWayAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8157AE5F3ACA656ADF1D2A1F /* Pods-HealthyWayAdmin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthyWayAdmin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HealthyWayAdmin/Pods-HealthyWayAdmin.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,8 +57,6 @@
 		156806289D48AF88BDCC019D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				471A926432EF96FD88D3EFE2 /* Pods-LearnFirebaseAuthenticationAndAuthorization.debug.xcconfig */,
-				2421658EEE068D149FC76824 /* Pods-LearnFirebaseAuthenticationAndAuthorization.release.xcconfig */,
 				8157AE5F3ACA656ADF1D2A1F /* Pods-HealthyWayAdmin.debug.xcconfig */,
 				0454DCD59AE6AC7967DB128B /* Pods-HealthyWayAdmin.release.xcconfig */,
 			);
@@ -281,7 +277,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.waxcruz.HealthyWayAdmin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.waxcruz.healthywayadmin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -301,7 +297,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.waxcruz.HealthyWayAdmin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.waxcruz.healthywayadmin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -359,7 +355,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -413,7 +409,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
