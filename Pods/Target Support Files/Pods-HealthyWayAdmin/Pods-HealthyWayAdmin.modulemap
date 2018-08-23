@@ -1,0 +1,6 @@
+framework module Pods_HealthyWayAdmin {
+  umbrella header "Pods-HealthyWayAdmin-umbrella.h"
+
+  export *
+  module * { export * }
+}
