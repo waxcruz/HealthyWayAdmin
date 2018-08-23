@@ -7,31 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14DFD078C6FD5D4D01D4438A /* Pods_LearnFirebaseAuthenticationAndAuthorization.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BB775AB7B4C686F843C26E8 /* Pods_LearnFirebaseAuthenticationAndAuthorization.framework */; };
-		348B8734212CE251000E0320 /* CreateNewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B8733212CE251000E0320 /* CreateNewAccountViewController.swift */; };
-		348B8736212CE26D000E0320 /* ClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B8735212CE26D000E0320 /* ClientViewController.swift */; };
-		348B8738212CE2AA000E0320 /* ForgottenPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B8737212CE2AA000E0320 /* ForgottenPasswordViewController.swift */; };
-		348B873A212CE311000E0320 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B8739212CE311000E0320 /* ChangePasswordViewController.swift */; };
-		348B873C212DA4A8000E0320 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B873B212DA4A8000E0320 /* GlobalConstants.swift */; };
-		34D4D8AD21299A9900BDAFF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D4D8AC21299A9900BDAFF5 /* AppDelegate.swift */; };
-		34D4D8AF21299A9900BDAFF5 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D4D8AE21299A9900BDAFF5 /* SignInViewController.swift */; };
-		34D4D8B221299A9900BDAFF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D4D8B021299A9900BDAFF5 /* Main.storyboard */; };
-		34D4D8B421299A9B00BDAFF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34D4D8B321299A9B00BDAFF5 /* Assets.xcassets */; };
-		34D4D8B721299A9B00BDAFF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D4D8B521299A9B00BDAFF5 /* LaunchScreen.storyboard */; };
-		34D4D8BF21299DE100BDAFF5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34D4D8BE21299DE000BDAFF5 /* GoogleService-Info.plist */; };
-		5AB6821F1201C22510F35BC5 /* Pods_HealthyWayAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E26648E50A8D60FDE8C298 /* Pods_HealthyWayAdmin.framework */; };
+		3402AD88212E4FE700A6C650 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D4D8AE21299A9900BDAFF5 /* SignInViewController.swift */; };
+		3402AD89212E4FE700A6C650 /* CreateNewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B8733212CE251000E0320 /* CreateNewAccountViewController.swift */; };
+		3402AD8A212E4FE700A6C650 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D4D8AC21299A9900BDAFF5 /* AppDelegate.swift */; };
+		3402AD8B212E4FE700A6C650 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B8739212CE311000E0320 /* ChangePasswordViewController.swift */; };
+		3402AD8C212E4FE700A6C650 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B873B212DA4A8000E0320 /* GlobalConstants.swift */; };
+		3402AD8D212E4FE700A6C650 /* ClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B8735212CE26D000E0320 /* ClientViewController.swift */; };
+		3402AD8E212E4FE700A6C650 /* ForgottenPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B8737212CE2AA000E0320 /* ForgottenPasswordViewController.swift */; };
+		3402AD90212E4FE700A6C650 /* Pods_HealthyWayAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E26648E50A8D60FDE8C298 /* Pods_HealthyWayAdmin.framework */; };
+		3402AD92212E4FE700A6C650 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D4D8B521299A9B00BDAFF5 /* LaunchScreen.storyboard */; };
+		3402AD93212E4FE700A6C650 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34D4D8BE21299DE000BDAFF5 /* GoogleService-Info.plist */; };
+		3402AD94212E4FE700A6C650 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34D4D8B321299A9B00BDAFF5 /* Assets.xcassets */; };
+		3402AD95212E4FE700A6C650 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D4D8B021299A9900BDAFF5 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0454DCD59AE6AC7967DB128B /* Pods-HealthyWayAdmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthyWayAdmin.release.xcconfig"; path = "Pods/Target Support Files/Pods-HealthyWayAdmin/Pods-HealthyWayAdmin.release.xcconfig"; sourceTree = "<group>"; };
 		0BB775AB7B4C686F843C26E8 /* Pods_LearnFirebaseAuthenticationAndAuthorization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearnFirebaseAuthenticationAndAuthorization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2421658EEE068D149FC76824 /* Pods-LearnFirebaseAuthenticationAndAuthorization.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnFirebaseAuthenticationAndAuthorization.release.xcconfig"; path = "Pods/Target Support Files/Pods-LearnFirebaseAuthenticationAndAuthorization/Pods-LearnFirebaseAuthenticationAndAuthorization.release.xcconfig"; sourceTree = "<group>"; };
+		3402AD9A212E4FE700A6C650 /* HealthyWayAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthyWayAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3402AD9B212E4FE700A6C650 /* HealthyWayAdmin copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "HealthyWayAdmin copy-Info.plist"; path = "/Users/waxcruz/Developer/HealthyWayAdminApp/HealthyWayAdmin/HealthyWayAdmin copy-Info.plist"; sourceTree = "<absolute>"; };
 		348B8733212CE251000E0320 /* CreateNewAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewAccountViewController.swift; sourceTree = "<group>"; };
 		348B8735212CE26D000E0320 /* ClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViewController.swift; sourceTree = "<group>"; };
 		348B8737212CE2AA000E0320 /* ForgottenPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgottenPasswordViewController.swift; sourceTree = "<group>"; };
 		348B8739212CE311000E0320 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		348B873B212DA4A8000E0320 /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
-		34D4D8A921299A9900BDAFF5 /* HealthyWayAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthyWayAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34D4D8AC21299A9900BDAFF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34D4D8AE21299A9900BDAFF5 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		34D4D8B121299A9900BDAFF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -45,12 +45,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		34D4D8A621299A9900BDAFF5 /* Frameworks */ = {
+		3402AD8F212E4FE700A6C650 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14DFD078C6FD5D4D01D4438A /* Pods_LearnFirebaseAuthenticationAndAuthorization.framework in Frameworks */,
-				5AB6821F1201C22510F35BC5 /* Pods_HealthyWayAdmin.framework in Frameworks */,
+				3402AD90212E4FE700A6C650 /* Pods_HealthyWayAdmin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,13 +86,14 @@
 				34D4D8AA21299A9900BDAFF5 /* Products */,
 				156806289D48AF88BDCC019D /* Pods */,
 				F9247F2A80D169F32048ACF5 /* Frameworks */,
+				3402AD9B212E4FE700A6C650 /* HealthyWayAdmin copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
 		34D4D8AA21299A9900BDAFF5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				34D4D8A921299A9900BDAFF5 /* HealthyWayAdmin.app */,
+				3402AD9A212E4FE700A6C650 /* HealthyWayAdmin.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,15 +125,15 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		34D4D8A821299A9900BDAFF5 /* HealthyWayAdmin */ = {
+		3402AD85212E4FE700A6C650 /* HealthyWayAdmin */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 34D4D8BB21299A9B00BDAFF5 /* Build configuration list for PBXNativeTarget "HealthyWayAdmin" */;
+			buildConfigurationList = 3402AD97212E4FE700A6C650 /* Build configuration list for PBXNativeTarget "HealthyWayAdmin" */;
 			buildPhases = (
-				C3E084CAF9358AEDF9635017 /* [CP] Check Pods Manifest.lock */,
-				34D4D8A521299A9900BDAFF5 /* Sources */,
-				34D4D8A621299A9900BDAFF5 /* Frameworks */,
-				34D4D8A721299A9900BDAFF5 /* Resources */,
-				4134822B9C31C138FF32749B /* [CP] Embed Pods Frameworks */,
+				3402AD86212E4FE700A6C650 /* [CP] Check Pods Manifest.lock */,
+				3402AD87212E4FE700A6C650 /* Sources */,
+				3402AD8F212E4FE700A6C650 /* Frameworks */,
+				3402AD91212E4FE700A6C650 /* Resources */,
+				3402AD96212E4FE700A6C650 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,7 +141,7 @@
 			);
 			name = HealthyWayAdmin;
 			productName = LearnFirebaseAuthenticationAndAuthorization;
-			productReference = 34D4D8A921299A9900BDAFF5 /* HealthyWayAdmin.app */;
+			productReference = 3402AD9A212E4FE700A6C650 /* HealthyWayAdmin.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -153,11 +153,6 @@
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = waxcruz;
-				TargetAttributes = {
-					34D4D8A821299A9900BDAFF5 = {
-						CreatedOnToolsVersion = 9.4.1;
-					};
-				};
 			};
 			buildConfigurationList = 34D4D8A421299A9900BDAFF5 /* Build configuration list for PBXProject "HealthyWayAdmin" */;
 			compatibilityVersion = "Xcode 9.3";
@@ -172,27 +167,45 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				34D4D8A821299A9900BDAFF5 /* HealthyWayAdmin */,
+				3402AD85212E4FE700A6C650 /* HealthyWayAdmin */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		34D4D8A721299A9900BDAFF5 /* Resources */ = {
+		3402AD91212E4FE700A6C650 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34D4D8B721299A9B00BDAFF5 /* LaunchScreen.storyboard in Resources */,
-				34D4D8BF21299DE100BDAFF5 /* GoogleService-Info.plist in Resources */,
-				34D4D8B421299A9B00BDAFF5 /* Assets.xcassets in Resources */,
-				34D4D8B221299A9900BDAFF5 /* Main.storyboard in Resources */,
+				3402AD92212E4FE700A6C650 /* LaunchScreen.storyboard in Resources */,
+				3402AD93212E4FE700A6C650 /* GoogleService-Info.plist in Resources */,
+				3402AD94212E4FE700A6C650 /* Assets.xcassets in Resources */,
+				3402AD95212E4FE700A6C650 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4134822B9C31C138FF32749B /* [CP] Embed Pods Frameworks */ = {
+		3402AD86212E4FE700A6C650 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HealthyWayAdmin-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3402AD96212E4FE700A6C650 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -216,38 +229,20 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HealthyWayAdmin/Pods-HealthyWayAdmin-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C3E084CAF9358AEDF9635017 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HealthyWayAdmin-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		34D4D8A521299A9900BDAFF5 /* Sources */ = {
+		3402AD87212E4FE700A6C650 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34D4D8AF21299A9900BDAFF5 /* SignInViewController.swift in Sources */,
-				348B8734212CE251000E0320 /* CreateNewAccountViewController.swift in Sources */,
-				34D4D8AD21299A9900BDAFF5 /* AppDelegate.swift in Sources */,
-				348B873A212CE311000E0320 /* ChangePasswordViewController.swift in Sources */,
-				348B873C212DA4A8000E0320 /* GlobalConstants.swift in Sources */,
-				348B8736212CE26D000E0320 /* ClientViewController.swift in Sources */,
-				348B8738212CE2AA000E0320 /* ForgottenPasswordViewController.swift in Sources */,
+				3402AD88212E4FE700A6C650 /* SignInViewController.swift in Sources */,
+				3402AD89212E4FE700A6C650 /* CreateNewAccountViewController.swift in Sources */,
+				3402AD8A212E4FE700A6C650 /* AppDelegate.swift in Sources */,
+				3402AD8B212E4FE700A6C650 /* ChangePasswordViewController.swift in Sources */,
+				3402AD8C212E4FE700A6C650 /* GlobalConstants.swift in Sources */,
+				3402AD8D212E4FE700A6C650 /* ClientViewController.swift in Sources */,
+				3402AD8E212E4FE700A6C650 /* ForgottenPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +268,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3402AD98212E4FE700A6C650 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8157AE5F3ACA656ADF1D2A1F /* Pods-HealthyWayAdmin.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XZMW4PYK4Y;
+				INFOPLIST_FILE = "HealthyWayAdmin copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.waxcruz.HealthyWayAdmin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3402AD99212E4FE700A6C650 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0454DCD59AE6AC7967DB128B /* Pods-HealthyWayAdmin.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XZMW4PYK4Y;
+				INFOPLIST_FILE = "HealthyWayAdmin copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.waxcruz.HealthyWayAdmin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		34D4D8B921299A9B00BDAFF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -387,63 +422,23 @@
 			};
 			name = Release;
 		};
-		34D4D8BC21299A9B00BDAFF5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8157AE5F3ACA656ADF1D2A1F /* Pods-HealthyWayAdmin.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XZMW4PYK4Y;
-				INFOPLIST_FILE = "$(SRCROOT)/HealthyWayAdminApp/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.waxcruz.HealthyWayAdmin;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		34D4D8BD21299A9B00BDAFF5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0454DCD59AE6AC7967DB128B /* Pods-HealthyWayAdmin.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XZMW4PYK4Y;
-				INFOPLIST_FILE = "$(SRCROOT)/HealthyWayAdminApp/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.waxcruz.HealthyWayAdmin;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3402AD97212E4FE700A6C650 /* Build configuration list for PBXNativeTarget "HealthyWayAdmin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3402AD98212E4FE700A6C650 /* Debug */,
+				3402AD99212E4FE700A6C650 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		34D4D8A421299A9900BDAFF5 /* Build configuration list for PBXProject "HealthyWayAdmin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				34D4D8B921299A9B00BDAFF5 /* Debug */,
 				34D4D8BA21299A9B00BDAFF5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		34D4D8BB21299A9B00BDAFF5 /* Build configuration list for PBXNativeTarget "HealthyWayAdmin" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				34D4D8BC21299A9B00BDAFF5 /* Debug */,
-				34D4D8BD21299A9B00BDAFF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
