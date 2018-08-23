@@ -7,21 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14DFD078C6FD5D4D01D4438A /* Pods_LearnFirebaseAuthenticationAndAuthorization.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BB775AB7B4C686F843C26E8 /* Pods_LearnFirebaseAuthenticationAndAuthorization.framework */; };
+		348B8734212CE251000E0320 /* CreateNewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B8733212CE251000E0320 /* CreateNewAccountViewController.swift */; };
+		348B8736212CE26D000E0320 /* ClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B8735212CE26D000E0320 /* ClientViewController.swift */; };
+		348B8738212CE2AA000E0320 /* ForgottenPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B8737212CE2AA000E0320 /* ForgottenPasswordViewController.swift */; };
+		348B873A212CE311000E0320 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B8739212CE311000E0320 /* ChangePasswordViewController.swift */; };
+		348B873C212DA4A8000E0320 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B873B212DA4A8000E0320 /* GlobalConstants.swift */; };
 		34D4D8AD21299A9900BDAFF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D4D8AC21299A9900BDAFF5 /* AppDelegate.swift */; };
-		34D4D8AF21299A9900BDAFF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D4D8AE21299A9900BDAFF5 /* ViewController.swift */; };
+		34D4D8AF21299A9900BDAFF5 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D4D8AE21299A9900BDAFF5 /* SignInViewController.swift */; };
 		34D4D8B221299A9900BDAFF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D4D8B021299A9900BDAFF5 /* Main.storyboard */; };
 		34D4D8B421299A9B00BDAFF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34D4D8B321299A9B00BDAFF5 /* Assets.xcassets */; };
 		34D4D8B721299A9B00BDAFF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D4D8B521299A9B00BDAFF5 /* LaunchScreen.storyboard */; };
+		34D4D8BF21299DE100BDAFF5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34D4D8BE21299DE000BDAFF5 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		34D4D8A921299A9900BDAFF5 /* LearnFirebaseAuthenticationAndAuthorization.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnFirebaseAuthenticationAndAuthorization.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BB775AB7B4C686F843C26E8 /* Pods_LearnFirebaseAuthenticationAndAuthorization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearnFirebaseAuthenticationAndAuthorization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2421658EEE068D149FC76824 /* Pods-LearnFirebaseAuthenticationAndAuthorization.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnFirebaseAuthenticationAndAuthorization.release.xcconfig"; path = "Pods/Target Support Files/Pods-LearnFirebaseAuthenticationAndAuthorization/Pods-LearnFirebaseAuthenticationAndAuthorization.release.xcconfig"; sourceTree = "<group>"; };
+		348B8733212CE251000E0320 /* CreateNewAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewAccountViewController.swift; sourceTree = "<group>"; };
+		348B8735212CE26D000E0320 /* ClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViewController.swift; sourceTree = "<group>"; };
+		348B8737212CE2AA000E0320 /* ForgottenPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgottenPasswordViewController.swift; sourceTree = "<group>"; };
+		348B8739212CE311000E0320 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		348B873B212DA4A8000E0320 /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
+		34D4D8A921299A9900BDAFF5 /* HealtlyWayAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealtlyWayAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34D4D8AC21299A9900BDAFF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		34D4D8AE21299A9900BDAFF5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		34D4D8AE21299A9900BDAFF5 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		34D4D8B121299A9900BDAFF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		34D4D8B321299A9B00BDAFF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34D4D8B621299A9B00BDAFF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34D4D8B821299A9B00BDAFF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34D4D8BE21299DE000BDAFF5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		471A926432EF96FD88D3EFE2 /* Pods-LearnFirebaseAuthenticationAndAuthorization.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnFirebaseAuthenticationAndAuthorization.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LearnFirebaseAuthenticationAndAuthorization/Pods-LearnFirebaseAuthenticationAndAuthorization.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,59 +45,95 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14DFD078C6FD5D4D01D4438A /* Pods_LearnFirebaseAuthenticationAndAuthorization.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		156806289D48AF88BDCC019D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				471A926432EF96FD88D3EFE2 /* Pods-LearnFirebaseAuthenticationAndAuthorization.debug.xcconfig */,
+				2421658EEE068D149FC76824 /* Pods-LearnFirebaseAuthenticationAndAuthorization.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		348B8732212CE228000E0320 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				34D4D8AE21299A9900BDAFF5 /* SignInViewController.swift */,
+				348B8733212CE251000E0320 /* CreateNewAccountViewController.swift */,
+				348B8735212CE26D000E0320 /* ClientViewController.swift */,
+				348B8737212CE2AA000E0320 /* ForgottenPasswordViewController.swift */,
+				348B8739212CE311000E0320 /* ChangePasswordViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		34D4D8A021299A9900BDAFF5 = {
 			isa = PBXGroup;
 			children = (
-				34D4D8AB21299A9900BDAFF5 /* LearnFirebaseAuthenticationAndAuthorization */,
+				34D4D8AB21299A9900BDAFF5 /* HealthyWayAdminApp */,
 				34D4D8AA21299A9900BDAFF5 /* Products */,
+				156806289D48AF88BDCC019D /* Pods */,
+				F9247F2A80D169F32048ACF5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		34D4D8AA21299A9900BDAFF5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				34D4D8A921299A9900BDAFF5 /* LearnFirebaseAuthenticationAndAuthorization.app */,
+				34D4D8A921299A9900BDAFF5 /* HealtlyWayAdmin.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		34D4D8AB21299A9900BDAFF5 /* LearnFirebaseAuthenticationAndAuthorization */ = {
+		34D4D8AB21299A9900BDAFF5 /* HealthyWayAdminApp */ = {
 			isa = PBXGroup;
 			children = (
-				34D4D8AC21299A9900BDAFF5 /* AppDelegate.swift */,
-				34D4D8AE21299A9900BDAFF5 /* ViewController.swift */,
 				34D4D8B021299A9900BDAFF5 /* Main.storyboard */,
+				348B873B212DA4A8000E0320 /* GlobalConstants.swift */,
+				348B8732212CE228000E0320 /* View Controllers */,
+				34D4D8AC21299A9900BDAFF5 /* AppDelegate.swift */,
 				34D4D8B321299A9B00BDAFF5 /* Assets.xcassets */,
 				34D4D8B521299A9B00BDAFF5 /* LaunchScreen.storyboard */,
+				34D4D8BE21299DE000BDAFF5 /* GoogleService-Info.plist */,
 				34D4D8B821299A9B00BDAFF5 /* Info.plist */,
 			);
-			path = LearnFirebaseAuthenticationAndAuthorization;
+			path = HealthyWayAdminApp;
+			sourceTree = "<group>";
+		};
+		F9247F2A80D169F32048ACF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0BB775AB7B4C686F843C26E8 /* Pods_LearnFirebaseAuthenticationAndAuthorization.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		34D4D8A821299A9900BDAFF5 /* LearnFirebaseAuthenticationAndAuthorization */ = {
+		34D4D8A821299A9900BDAFF5 /* HealtlyWayAdmin */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 34D4D8BB21299A9B00BDAFF5 /* Build configuration list for PBXNativeTarget "LearnFirebaseAuthenticationAndAuthorization" */;
+			buildConfigurationList = 34D4D8BB21299A9B00BDAFF5 /* Build configuration list for PBXNativeTarget "HealtlyWayAdmin" */;
 			buildPhases = (
+				C3E084CAF9358AEDF9635017 /* [CP] Check Pods Manifest.lock */,
 				34D4D8A521299A9900BDAFF5 /* Sources */,
 				34D4D8A621299A9900BDAFF5 /* Frameworks */,
 				34D4D8A721299A9900BDAFF5 /* Resources */,
+				4134822B9C31C138FF32749B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = LearnFirebaseAuthenticationAndAuthorization;
+			name = HealtlyWayAdmin;
 			productName = LearnFirebaseAuthenticationAndAuthorization;
-			productReference = 34D4D8A921299A9900BDAFF5 /* LearnFirebaseAuthenticationAndAuthorization.app */;
+			productReference = 34D4D8A921299A9900BDAFF5 /* HealtlyWayAdmin.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -99,7 +151,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 34D4D8A421299A9900BDAFF5 /* Build configuration list for PBXProject "LearnFirebaseAuthenticationAndAuthorization" */;
+			buildConfigurationList = 34D4D8A421299A9900BDAFF5 /* Build configuration list for PBXProject "HealtlyWayAdmin" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -112,7 +164,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				34D4D8A821299A9900BDAFF5 /* LearnFirebaseAuthenticationAndAuthorization */,
+				34D4D8A821299A9900BDAFF5 /* HealtlyWayAdmin */,
 			);
 		};
 /* End PBXProject section */
@@ -123,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34D4D8B721299A9B00BDAFF5 /* LaunchScreen.storyboard in Resources */,
+				34D4D8BF21299DE100BDAFF5 /* GoogleService-Info.plist in Resources */,
 				34D4D8B421299A9B00BDAFF5 /* Assets.xcassets in Resources */,
 				34D4D8B221299A9900BDAFF5 /* Main.storyboard in Resources */,
 			);
@@ -130,13 +183,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4134822B9C31C138FF32749B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LearnFirebaseAuthenticationAndAuthorization/Pods-LearnFirebaseAuthenticationAndAuthorization-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LearnFirebaseAuthenticationAndAuthorization/Pods-LearnFirebaseAuthenticationAndAuthorization-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3E084CAF9358AEDF9635017 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LearnFirebaseAuthenticationAndAuthorization-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		34D4D8A521299A9900BDAFF5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34D4D8AF21299A9900BDAFF5 /* ViewController.swift in Sources */,
+				34D4D8AF21299A9900BDAFF5 /* SignInViewController.swift in Sources */,
+				348B8734212CE251000E0320 /* CreateNewAccountViewController.swift in Sources */,
 				34D4D8AD21299A9900BDAFF5 /* AppDelegate.swift in Sources */,
+				348B873A212CE311000E0320 /* ChangePasswordViewController.swift in Sources */,
+				348B873C212DA4A8000E0320 /* GlobalConstants.swift in Sources */,
+				348B8736212CE26D000E0320 /* ClientViewController.swift in Sources */,
+				348B8738212CE2AA000E0320 /* ForgottenPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,11 +381,12 @@
 		};
 		34D4D8BC21299A9B00BDAFF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 471A926432EF96FD88D3EFE2 /* Pods-LearnFirebaseAuthenticationAndAuthorization.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XZMW4PYK4Y;
-				INFOPLIST_FILE = LearnFirebaseAuthenticationAndAuthorization/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/HealthyWayAdminApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,11 +400,12 @@
 		};
 		34D4D8BD21299A9B00BDAFF5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2421658EEE068D149FC76824 /* Pods-LearnFirebaseAuthenticationAndAuthorization.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XZMW4PYK4Y;
-				INFOPLIST_FILE = LearnFirebaseAuthenticationAndAuthorization/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/HealthyWayAdminApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +420,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		34D4D8A421299A9900BDAFF5 /* Build configuration list for PBXProject "LearnFirebaseAuthenticationAndAuthorization" */ = {
+		34D4D8A421299A9900BDAFF5 /* Build configuration list for PBXProject "HealtlyWayAdmin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				34D4D8B921299A9B00BDAFF5 /* Debug */,
@@ -324,7 +429,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		34D4D8BB21299A9B00BDAFF5 /* Build configuration list for PBXNativeTarget "LearnFirebaseAuthenticationAndAuthorization" */ = {
+		34D4D8BB21299A9B00BDAFF5 /* Build configuration list for PBXNativeTarget "HealtlyWayAdmin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				34D4D8BC21299A9B00BDAFF5 /* Debug */,
