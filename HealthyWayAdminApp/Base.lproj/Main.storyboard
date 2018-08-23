@@ -14,7 +14,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SignInViewController" customModule="HealtlyWayAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SignInViewController" customModule="HealthyWayAdmin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -135,7 +135,7 @@
         <!--Client View Controller-->
         <scene sceneID="d9Q-rN-foh">
             <objects>
-                <viewController id="VDt-GO-xjI" customClass="ClientViewController" customModule="HealtlyWayAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VDt-GO-xjI" customClass="ClientViewController" customModule="HealthyWayAdmin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="guP-ex-c47">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,15 +153,15 @@
                                                     <constraint firstAttribute="height" constant="30" id="qNf-L1-2hq"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbF-iv-xd8">
-                                                <rect key="frame" x="244" y="0.0" width="123" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbF-iv-xd8">
+                                                <rect key="frame" x="342" y="0.0" width="25" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="5Uv-8B-cOp"/>
                                                 </constraints>
-                                                <state key="normal" title="Change Password"/>
+                                                <state key="normal" image="settingsTab"/>
                                                 <connections>
-                                                    <segue destination="mc4-Qm-DpX" kind="show" id="NIh-Z1-Phi"/>
+                                                    <segue destination="LfI-Cx-Drb" kind="presentation" id="vA6-kD-dMn"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ot-qj-fAd" userLabel="MailBox">
@@ -305,10 +305,92 @@
             </objects>
             <point key="canvasLocation" x="886" y="120"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="vmW-uv-GwK">
+            <objects>
+                <viewController id="LfI-Cx-Drb" customClass="SettingsViewController" customModule="HealthyWayAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ALG-wA-bCg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhD-2F-Pty" userLabel="Contents">
+                                <rect key="frame" x="2" y="22" width="371" height="643"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Admin Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6U-Hk-GX5">
+                                        <rect key="frame" x="2" y="2" width="367" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="9xc-27-Rab"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="208-0R-x6w" userLabel="Choices Stack View">
+                                        <rect key="frame" x="92" y="87" width="187" height="153"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2q-Ew-BmG">
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <state key="normal" title="Change Password"/>
+                                                <connections>
+                                                    <segue destination="mc4-Qm-DpX" kind="presentation" id="RQM-lA-hRd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ub-pX-b7U">
+                                                <rect key="frame" x="0.0" y="56" width="187" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <state key="normal" title="Sign Out"/>
+                                                <connections>
+                                                    <action selector="signout:" destination="LfI-Cx-Drb" eventType="touchUpInside" id="mj9-A5-ve0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q9B-Qo-gSD">
+                                                <rect key="frame" x="0.0" y="112" width="187" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <state key="normal" title="Cancel"/>
+                                                <connections>
+                                                    <action selector="cancel:" destination="LfI-Cx-Drb" eventType="touchUpInside" id="IOn-Hk-Iwq"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="q9B-Qo-gSD" firstAttribute="width" secondItem="8Ub-pX-b7U" secondAttribute="width" id="Fu9-UA-gM2"/>
+                                            <constraint firstItem="8Ub-pX-b7U" firstAttribute="width" secondItem="L2q-Ew-BmG" secondAttribute="width" id="Wo2-T3-HSv"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="H6U-Hk-GX5" secondAttribute="trailing" constant="2" id="R1e-oN-Vww"/>
+                                    <constraint firstItem="H6U-Hk-GX5" firstAttribute="leading" secondItem="hhD-2F-Pty" secondAttribute="leading" constant="2" id="R6D-Lb-8ut"/>
+                                    <constraint firstItem="208-0R-x6w" firstAttribute="centerX" secondItem="hhD-2F-Pty" secondAttribute="centerX" id="Rnz-y8-yxr"/>
+                                    <constraint firstItem="208-0R-x6w" firstAttribute="top" secondItem="H6U-Hk-GX5" secondAttribute="bottom" constant="40" id="XuU-vT-mjh"/>
+                                    <constraint firstItem="H6U-Hk-GX5" firstAttribute="top" secondItem="hhD-2F-Pty" secondAttribute="top" constant="2" id="h4q-fy-QFM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hhD-2F-Pty" firstAttribute="leading" secondItem="5uG-Qt-AZ2" secondAttribute="leading" constant="2" id="Fg8-1y-VWb"/>
+                            <constraint firstItem="5uG-Qt-AZ2" firstAttribute="trailing" secondItem="hhD-2F-Pty" secondAttribute="trailing" constant="2" id="eGe-ie-Lpn"/>
+                            <constraint firstItem="hhD-2F-Pty" firstAttribute="top" secondItem="5uG-Qt-AZ2" secondAttribute="top" constant="2" id="fv1-Fk-8Kg"/>
+                            <constraint firstItem="5uG-Qt-AZ2" firstAttribute="bottom" secondItem="hhD-2F-Pty" secondAttribute="bottom" constant="2" id="yzS-RT-BDh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5uG-Qt-AZ2"/>
+                    </view>
+                    <connections>
+                        <segue destination="EO2-HW-u4r" kind="unwind" identifier="unwindBackToHomeID" unwindAction="unwindToSignInViewControllerWithSegue:" id="vOB-Wj-sWB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vcw-7D-aGq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="EO2-HW-u4r" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1647" y="119"/>
+        </scene>
         <!--Change Password View Controller-->
         <scene sceneID="8yF-JX-R6y">
             <objects>
-                <viewController id="mc4-Qm-DpX" customClass="ChangePasswordViewController" customModule="HealtlyWayAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mc4-Qm-DpX" customClass="ChangePasswordViewController" customModule="HealthyWayAdmin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nLA-X4-1hQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -410,12 +492,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="taL-NJ-bJ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1607" y="797"/>
+            <point key="canvasLocation" x="1646" y="851"/>
         </scene>
         <!--Forgotten Password View Controller-->
         <scene sceneID="FlS-sM-a8o">
             <objects>
-                <viewController id="8a3-W2-AXZ" customClass="ForgottenPasswordViewController" customModule="HealtlyWayAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8a3-W2-AXZ" customClass="ForgottenPasswordViewController" customModule="HealthyWayAdmin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="riK-Jq-57d">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -511,7 +593,7 @@
         <!--Create New Account View Controller-->
         <scene sceneID="xAl-jF-EPI">
             <objects>
-                <viewController id="v6Q-Ba-NuH" customClass="CreateNewAccountViewController" customModule="HealtlyWayAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="v6Q-Ba-NuH" customClass="CreateNewAccountViewController" customModule="HealthyWayAdmin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="knb-hL-ljS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -620,8 +702,9 @@
     <resources>
         <image name="hwIcon" width="30" height="30"/>
         <image name="mailboxButton" width="25" height="25"/>
+        <image name="settingsTab" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="d97-dW-cgA"/>
+        <segue reference="eDt-Zh-3pc"/>
     </inferredMetricsTieBreakers>
 </document>

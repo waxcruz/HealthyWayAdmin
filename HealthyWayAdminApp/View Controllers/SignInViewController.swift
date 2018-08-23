@@ -33,8 +33,8 @@ class SignInViewController: UIViewController {
         email.addTarget(self, action: #selector(SignInViewController.textFieldDidEnd(_:)), for: UIControlEvents.editingDidEndOnExit)
         password.addTarget(self, action: #selector(SignInViewController.textFieldDidEnd(_:)), for: UIControlEvents.editingDidEndOnExit)
         message.textContainer.lineBreakMode = NSLineBreakMode.byWordWrapping
-        email.text = "wmyronw@yahoo.com"
-        password.text = "waxwaxwax"
+//        email.text = "wmyronw@yahoo.com"
+//        password.text = "waxwaxwax"
 
     }
 
@@ -83,6 +83,10 @@ class SignInViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func unwindToSignInViewController(segue:UIStoryboardSegue) { }
+    
+    
     
     // MARK - process data
     func getUserData() {

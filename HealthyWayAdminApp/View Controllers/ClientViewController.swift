@@ -38,6 +38,10 @@ class ClientViewController: UIViewController, MFMailComposeViewControllerDelegat
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            // ...
+            NSLog("user sign-in state changed")
+        }
         let attrStr = try! NSAttributedString(
             data: Constants.JOURNAL_MOCKUP.data(using: String.Encoding.unicode, allowLossyConversion: true)!,
             options:[NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)

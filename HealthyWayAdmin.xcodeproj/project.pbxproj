@@ -19,6 +19,7 @@
 		3402AD93212E4FE700A6C650 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34D4D8BE21299DE000BDAFF5 /* GoogleService-Info.plist */; };
 		3402AD94212E4FE700A6C650 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34D4D8B321299A9B00BDAFF5 /* Assets.xcassets */; };
 		3402AD95212E4FE700A6C650 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D4D8B021299A9900BDAFF5 /* Main.storyboard */; };
+		3402AD9E212F107100A6C650 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3402AD9D212F107100A6C650 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		3402AD9A212E4FE700A6C650 /* HealthyWayAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthyWayAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3402AD9B212E4FE700A6C650 /* HealthyWayAdmin copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "HealthyWayAdmin copy-Info.plist"; path = "/Users/waxcruz/Developer/HealthyWayAdminApp/HealthyWayAdmin/HealthyWayAdmin copy-Info.plist"; sourceTree = "<absolute>"; };
 		3402AD9C212EFD8B00A6C650 /* HealthyWayAdmin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HealthyWayAdmin.entitlements; sourceTree = "<group>"; };
+		3402AD9D212F107100A6C650 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		348B8733212CE251000E0320 /* CreateNewAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewAccountViewController.swift; sourceTree = "<group>"; };
 		348B8735212CE26D000E0320 /* ClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViewController.swift; sourceTree = "<group>"; };
 		348B8737212CE2AA000E0320 /* ForgottenPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgottenPasswordViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				348B8735212CE26D000E0320 /* ClientViewController.swift */,
 				348B8737212CE2AA000E0320 /* ForgottenPasswordViewController.swift */,
 				348B8739212CE311000E0320 /* ChangePasswordViewController.swift */,
+				3402AD9D212F107100A6C650 /* SettingsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				3402AD8C212E4FE700A6C650 /* GlobalConstants.swift in Sources */,
 				3402AD8D212E4FE700A6C650 /* ClientViewController.swift in Sources */,
 				3402AD8E212E4FE700A6C650 /* ForgottenPasswordViewController.swift in Sources */,
+				3402AD9E212F107100A6C650 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
