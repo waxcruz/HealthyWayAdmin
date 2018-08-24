@@ -91,6 +91,14 @@ class CreateNewAccountViewController: UIViewController {
         // authentication complete, show client view
         performSegue(withIdentifier: Constants.SEGUE_FROM_CREATE_TO_CLIENT_ID, sender: nil)
 }
+    
+    
+    @IBAction func cancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 

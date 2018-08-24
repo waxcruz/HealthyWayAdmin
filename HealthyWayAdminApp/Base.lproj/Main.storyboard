@@ -78,8 +78,7 @@
                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="createNewAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ze2-HX-OGl"/>
-                                                    <segue destination="v6Q-Ba-NuH" kind="show" id="msV-9s-2bM"/>
+                                                    <segue destination="v6Q-Ba-NuH" kind="presentation" id="msV-9s-2bM"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9Y-yr-xj2">
@@ -405,7 +404,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Box-nO-pEg" userLabel="Sign-in Stack View">
-                                        <rect key="frame" x="104" y="50" width="163.5" height="161"/>
+                                        <rect key="frame" x="104" y="50" width="163.5" height="231.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TOY-pM-PzT" userLabel="Old Password Stack View">
                                                 <rect key="frame" x="0.0" y="0.0" width="163.5" height="30"/>
@@ -450,6 +449,20 @@
                                                 <connections>
                                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PaN-vG-qUr"/>
                                                     <action selector="submit:" destination="mc4-Qm-DpX" eventType="touchUpInside" id="3ig-wk-EQS"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-------- or ------" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUu-gd-hBR">
+                                                <rect key="frame" x="0.0" y="171" width="163.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMT-NW-ZWJ">
+                                                <rect key="frame" x="0.0" y="201.5" width="163.5" height="30"/>
+                                                <state key="normal" title="Cancel"/>
+                                                <connections>
+                                                    <action selector="cancel:" destination="mc4-Qm-DpX" eventType="touchUpInside" id="yPq-Ki-ARB"/>
+                                                    <action selector="cancel:" destination="8a3-W2-AXZ" eventType="touchUpInside" id="zUl-tr-e5i"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -588,7 +601,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y9q-on-XAB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="886" y="798"/>
+            <point key="canvasLocation" x="822" y="946"/>
         </scene>
         <!--Create New Account View Controller-->
         <scene sceneID="xAl-jF-EPI">
@@ -608,7 +621,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ePN-5k-2fJ" userLabel="Sign-in Stack View">
-                                        <rect key="frame" x="104" y="50" width="163.5" height="161"/>
+                                        <rect key="frame" x="104" y="50" width="163.5" height="231.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Bs-09-bjm" userLabel="Email Stack View">
                                                 <rect key="frame" x="0.0" y="0.0" width="163.5" height="30"/>
@@ -653,6 +666,20 @@
                                                 <connections>
                                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iNz-bz-aKf"/>
                                                     <action selector="signIn:" destination="v6Q-Ba-NuH" eventType="touchUpInside" id="s28-Is-Bz9"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-------- or ------" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7e6-Td-xOH">
+                                                <rect key="frame" x="0.0" y="171" width="163.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZs-BR-EYD">
+                                                <rect key="frame" x="0.0" y="201.5" width="163.5" height="30"/>
+                                                <state key="normal" title="Cancel"/>
+                                                <connections>
+                                                    <action selector="cancel:" destination="v6Q-Ba-NuH" eventType="touchUpInside" id="fcj-Mu-DL6"/>
+                                                    <action selector="cancel:" destination="8a3-W2-AXZ" eventType="touchUpInside" id="zt6-8G-Lb4"/>
                                                 </connections>
                                             </button>
                                         </subviews>
