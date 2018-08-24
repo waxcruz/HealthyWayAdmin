@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "34D4D8A821299A9900BDAFF5"
-               BuildableName = "HealtlyWayAdmin.app"
-               BlueprintName = "HealtlyWayAdmin"
-               ReferencedContainer = "container:HealtlyWayAdmin.xcodeproj">
+               BlueprintIdentifier = "3402AD85212E4FE700A6C650"
+               BuildableName = "HealthyWayAdmin.app"
+               BlueprintName = "HealthyWayAdmin"
+               ReferencedContainer = "container:HealthyWayAdmin.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "34D4D8A821299A9900BDAFF5"
-            BuildableName = "HealtlyWayAdmin.app"
-            BlueprintName = "HealtlyWayAdmin"
-            ReferencedContainer = "container:HealtlyWayAdmin.xcodeproj">
+            BlueprintIdentifier = "3402AD85212E4FE700A6C650"
+            BuildableName = "HealthyWayAdmin.app"
+            BlueprintName = "HealthyWayAdmin"
+            ReferencedContainer = "container:HealthyWayAdmin.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "34D4D8A821299A9900BDAFF5"
-            BuildableName = "HealtlyWayAdmin.app"
-            BlueprintName = "HealtlyWayAdmin"
-            ReferencedContainer = "container:HealtlyWayAdmin.xcodeproj">
+            BlueprintIdentifier = "3402AD85212E4FE700A6C650"
+            BuildableName = "HealthyWayAdmin.app"
+            BlueprintName = "HealthyWayAdmin"
+            ReferencedContainer = "container:HealthyWayAdmin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "34D4D8A821299A9900BDAFF5"
-            BuildableName = "HealtlyWayAdmin.app"
-            BlueprintName = "HealtlyWayAdmin"
-            ReferencedContainer = "container:HealtlyWayAdmin.xcodeproj">
+            BlueprintIdentifier = "3402AD85212E4FE700A6C650"
+            BuildableName = "HealthyWayAdmin.app"
+            BlueprintName = "HealthyWayAdmin"
+            ReferencedContainer = "container:HealthyWayAdmin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
