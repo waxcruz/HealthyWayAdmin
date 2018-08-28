@@ -33,8 +33,8 @@ class SignInViewController: UIViewController {
         email.addTarget(self, action: #selector(SignInViewController.textFieldDidEnd(_:)), for: UIControlEvents.editingDidEndOnExit)
         password.addTarget(self, action: #selector(SignInViewController.textFieldDidEnd(_:)), for: UIControlEvents.editingDidEndOnExit)
         message.textContainer.lineBreakMode = NSLineBreakMode.byWordWrapping
-//        email.text = "wmyronw@yahoo.com"
-//        password.text = "waxwaxwax"
+        email.text = "wmyronw@yahoo.com"
+        password.text = "waxwax"
 
     }
 
@@ -93,12 +93,12 @@ class SignInViewController: UIViewController {
         // let userID = Auth.auth().currentUser?.uid
         ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
-            print("entering firebase return of data")
-            if let value = snapshot.value as? NSDictionary {
-                for (key, email) in value {
-                    print(key, email)
-                }
-            }
+//            print("entering firebase return of data")
+//            if let value = snapshot.value as? NSDictionary {
+//                for (key, email) in value {
+//                    print(key, email)
+//                }
+//            }
             self.performSegue(withIdentifier: Constants.SEGUE_FROM_SIGNIN_TO_CLIENT_ID, sender: nil)
         })
         { (error) in

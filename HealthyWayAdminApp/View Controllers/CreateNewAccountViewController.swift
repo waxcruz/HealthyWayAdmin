@@ -78,8 +78,19 @@ class CreateNewAccountViewController: UIViewController {
         Auth.auth().createUser(withEmail: emailEntered!, password: passwordEntered!) { (authResult, error) in
             // ...
             guard let user = authResult?.user else { return }
+            guard let email = authResult?.user.email else { return }
             // write to users node
             self.ref.child("users").child(user.uid).setValue(["email": self.emailEntered!, "isAdmin": true]) {
+                (error:Error?, ref:DatabaseReference) in
+                if let error = error {
+                    self.message.text = "Account creation failed: \(error)."
+                } else {
+                    self.message.text = "Account creation in progress"
+                }
+            }
+            // write to emails node
+            let keyEmail = makeFirebaseEmailKey(email: email)
+            self.ref.child("emails").child(keyEmail).setValue(["uid": user.uid]) {
                 (error:Error?, ref:DatabaseReference) in
                 if let error = error {
                     self.message.text = "Account creation failed: \(error)."

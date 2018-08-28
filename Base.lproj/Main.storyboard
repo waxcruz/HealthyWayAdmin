@@ -190,11 +190,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dd7-uM-ExZ" userLabel="Email search">
                                         <rect key="frame" x="1.5" y="34" width="367" height="30"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="enter client email address" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g4A-vI-83y" userLabel="email">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="waxcoder@yahoo.com" borderStyle="roundedRect" placeholder="enter client email address" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="g4A-vI-83y" userLabel="email">
                                                 <rect key="frame" x="2" y="0.0" width="363" height="30"/>
                                                 <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="search" textContentType="email"/>
+                                                <connections>
+                                                    <action selector="searchEmail:" destination="VDt-GO-xjI" eventType="editingDidEnd" id="HBt-SN-N0o"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -732,6 +735,6 @@
         <image name="settingsTab" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eDt-Zh-3pc"/>
+        <segue reference="8Lf-gK-gv5"/>
     </inferredMetricsTieBreakers>
 </document>
