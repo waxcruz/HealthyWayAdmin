@@ -9,6 +9,8 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import HealthyWayFramework
+
 
 class CreateNewAccountViewController: UIViewController {
     // MARK - Sign-in fields

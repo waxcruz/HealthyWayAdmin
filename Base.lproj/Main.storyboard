@@ -209,10 +209,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xX-b4-KgC" userLabel="Journal Contents">
-                                        <rect key="frame" x="-0.5" y="66" width="371" height="386"/>
+                                        <rect key="frame" x="-0.5" y="66" width="371" height="321.5"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="client journal" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5B-cC-Yo5" userLabel="journal">
-                                                <rect key="frame" x="2" y="2" width="367" height="382"/>
+                                                <rect key="frame" x="2" y="2" width="367" height="317.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
@@ -227,28 +227,26 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WYn-dI-boT" userLabel="Weight Chart">
-                                        <rect key="frame" x="-0.5" y="454" width="371" height="128.5"/>
+                                        <rect key="frame" x="-0.5" y="389.5" width="371" height="225"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place Weight Chart(30 days ) here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bB-6D-HR8">
-                                                <rect key="frame" x="2" y="2" width="367" height="124.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MG8-sz-5bb" userLabel="Chart" customClass="LineChartView" customModule="Charts">
+                                                <rect key="frame" x="2" y="2" width="367" height="221"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="6bB-6D-HR8" secondAttribute="bottom" constant="2" id="26n-gm-Ko9"/>
-                                            <constraint firstItem="6bB-6D-HR8" firstAttribute="top" secondItem="WYn-dI-boT" secondAttribute="top" constant="2" id="3zE-br-Wgf"/>
-                                            <constraint firstAttribute="trailing" secondItem="6bB-6D-HR8" secondAttribute="trailing" constant="2" id="UEs-bU-HKQ"/>
-                                            <constraint firstItem="6bB-6D-HR8" firstAttribute="leading" secondItem="WYn-dI-boT" secondAttribute="leading" constant="2" id="lCG-Ec-PPg"/>
+                                            <constraint firstAttribute="trailing" secondItem="MG8-sz-5bb" secondAttribute="trailing" constant="2" id="RHY-qN-9Wi"/>
+                                            <constraint firstItem="MG8-sz-5bb" firstAttribute="leading" secondItem="WYn-dI-boT" secondAttribute="leading" constant="2" id="XWh-C0-XAe"/>
+                                            <constraint firstItem="MG8-sz-5bb" firstAttribute="top" secondItem="WYn-dI-boT" secondAttribute="top" constant="2" id="e4j-mE-dj3"/>
+                                            <constraint firstAttribute="bottom" secondItem="MG8-sz-5bb" secondAttribute="bottom" constant="2" id="wG1-bu-5Xk"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFm-jH-KBS" userLabel="Message">
-                                        <rect key="frame" x="-0.5" y="576.5" width="371" height="64.5"/>
+                                        <rect key="frame" x="-0.5" y="609" width="371" height="32"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Messages" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4cM-gF-9Js" userLabel="message">
-                                                <rect key="frame" x="2" y="2" width="367" height="60.5"/>
+                                                <rect key="frame" x="2" y="2" width="367" height="28"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -269,9 +267,9 @@
                                     <constraint firstItem="WYn-dI-boT" firstAttribute="top" secondItem="3xX-b4-KgC" secondAttribute="bottom" constant="2" id="2Ej-G5-7mE"/>
                                     <constraint firstItem="WYn-dI-boT" firstAttribute="centerX" secondItem="spa-9q-EFf" secondAttribute="centerX" id="3kF-Nc-swP"/>
                                     <constraint firstItem="eFm-jH-KBS" firstAttribute="width" secondItem="spa-9q-EFf" secondAttribute="width" id="4r3-ao-bcN"/>
-                                    <constraint firstItem="WYn-dI-boT" firstAttribute="height" secondItem="spa-9q-EFf" secondAttribute="height" multiplier="0.2" id="9Tc-Hc-wF1"/>
+                                    <constraint firstItem="WYn-dI-boT" firstAttribute="height" secondItem="spa-9q-EFf" secondAttribute="height" multiplier="0.35" id="9Tc-Hc-wF1"/>
                                     <constraint firstItem="WYn-dI-boT" firstAttribute="width" secondItem="spa-9q-EFf" secondAttribute="width" id="9wy-xM-tHW"/>
-                                    <constraint firstItem="eFm-jH-KBS" firstAttribute="height" secondItem="spa-9q-EFf" secondAttribute="height" multiplier="0.1" id="Axb-hM-7GO"/>
+                                    <constraint firstItem="eFm-jH-KBS" firstAttribute="height" secondItem="spa-9q-EFf" secondAttribute="height" multiplier="0.05" id="Axb-hM-7GO"/>
                                     <constraint firstAttribute="trailing" secondItem="wfX-Da-ROt" secondAttribute="trailing" constant="2" id="DDL-oK-SiP"/>
                                     <constraint firstItem="Dd7-uM-ExZ" firstAttribute="top" secondItem="wfX-Da-ROt" secondAttribute="bottom" constant="2" id="LoD-8u-rqc"/>
                                     <constraint firstItem="3xX-b4-KgC" firstAttribute="width" secondItem="spa-9q-EFf" secondAttribute="width" id="asj-3Y-MO5"/>
@@ -279,7 +277,7 @@
                                     <constraint firstItem="wfX-Da-ROt" firstAttribute="leading" secondItem="spa-9q-EFf" secondAttribute="leading" constant="2" id="gw5-0p-vyk"/>
                                     <constraint firstItem="Dd7-uM-ExZ" firstAttribute="centerX" secondItem="wfX-Da-ROt" secondAttribute="centerX" id="hKk-1L-XyH"/>
                                     <constraint firstItem="Dd7-uM-ExZ" firstAttribute="width" secondItem="wfX-Da-ROt" secondAttribute="width" id="lDb-Kg-af7"/>
-                                    <constraint firstItem="3xX-b4-KgC" firstAttribute="height" secondItem="spa-9q-EFf" secondAttribute="height" multiplier="0.6" id="myf-qk-fdl"/>
+                                    <constraint firstItem="3xX-b4-KgC" firstAttribute="height" secondItem="spa-9q-EFf" secondAttribute="height" multiplier="0.5" id="myf-qk-fdl"/>
                                     <constraint firstAttribute="bottom" secondItem="eFm-jH-KBS" secondAttribute="bottom" constant="2" id="vPK-PI-G9o"/>
                                     <constraint firstItem="wfX-Da-ROt" firstAttribute="top" secondItem="spa-9q-EFf" secondAttribute="top" constant="2" id="wZU-RG-LpN"/>
                                     <constraint firstItem="3xX-b4-KgC" firstAttribute="top" secondItem="Dd7-uM-ExZ" secondAttribute="bottom" constant="2" id="xUV-tJ-b0Y"/>
@@ -299,8 +297,8 @@
                     <connections>
                         <outlet property="clientEmail" destination="g4A-vI-83y" id="1T1-sm-UD3"/>
                         <outlet property="journal" destination="T5B-cC-Yo5" id="o6F-Le-4Ed"/>
+                        <outlet property="lineChart" destination="MG8-sz-5bb" id="hjs-9y-786"/>
                         <outlet property="message" destination="4cM-gF-9Js" id="oxx-u9-uRo"/>
-                        <outlet property="weightChart" destination="6bB-6D-HR8" id="z5z-hD-BtK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QZw-5d-hyU" userLabel="First Responder" sceneMemberID="firstResponder"/>

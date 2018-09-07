@@ -9,15 +9,18 @@
 import UIKit
 import Firebase
 import MessageUI
+import HealthyWayFramework
+import Charts
+    
+    
 
 
 class ClientViewController: UIViewController, MFMailComposeViewControllerDelegate {
     //MARK - outlets
     @IBOutlet weak var clientEmail: UITextField!
     @IBOutlet weak var journal: UITextView!
-    @IBOutlet weak var weightChart: UILabel!
     @IBOutlet weak var message: UITextView!
-    
+    @IBOutlet weak var lineChart: LineChartView!
     // MARK - properties
     var emailEntered : String?
     var clientUID : String?
@@ -45,7 +48,6 @@ class ClientViewController: UIViewController, MFMailComposeViewControllerDelegat
         ref = Database.database().reference()
         clientEmail.addTarget(self, action: #selector(SignInViewController.textFieldDidEnd(_:)), for: UIControlEvents.editingDidEndOnExit)
         message.textContainer.lineBreakMode = NSLineBreakMode.byWordWrapping
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -100,7 +102,8 @@ class ClientViewController: UIViewController, MFMailComposeViewControllerDelegat
                             { (snapshot)
                                 in
                                 self.clientNode = snapshot.value as? [String : Any?] ?? [:]
-                                self.htmlLayout = self.formatJournal(clientNode: self.clientNode)
+                                self.journal.attributedText = formatJournal(clientNode: self.clientNode)
+                                self.lineChartUpdate(clientNode: self.clientNode)
                         }) { (error) in
                             self.message.text = "Journal read error" + error.localizedDescription
                         }
@@ -135,57 +138,6 @@ class ClientViewController: UIViewController, MFMailComposeViewControllerDelegat
     
 
     
-    func buildJournalDailyTotalsRow(dateOfMealString displaydate : String, settingsNode node : [String : Any?]) -> String {
-        var template = Constants.JOURNAL_DAILY_TOTALS_ROW
-        template = template.replacingOccurrences(of: "HW_RECORDED_DATE", with: displaydate)
-        template = template.replacingOccurrences(of: "HW_DAILY_TOTAL_PROTEIN_VALUE", with: String(node["LIMIT_PROTEIN_LOW"] as? Double ?? 0.0))
-        template = template.replacingOccurrences(of: "HW_DAILY_TOTAL_STARCH_VALUE", with: String(node["LIMIT_STARCH"] as? Double ?? 0.0))
-        template = template.replacingOccurrences(of: "HW_DAILY_TOTAL_VEGGIES_VALUE", with: "3.0")
-        template = template.replacingOccurrences(of: "HW_DAILY_TOTAL_FRUIT_VALUE", with: String(node["LIMIT_FRUIT"] as? Double ?? 0.0))
-        template = template.replacingOccurrences(of: "HW_DAILY_TOTAL_FAT_VALUE", with: String(node["LIMIT_FAT"] as? Double ?? 0.0))
-        return template
-    }
-    func buildJournalMealRow() -> String {
-        var template = Constants.JOURNAL_MEAL_ROW
-        template = template.replacingOccurrences(of: "HW_MEAL_NAME", with: "Breakfast")
-        template = template.replacingOccurrences(of: "HW_MEAL_CONTENTS_DESCRIPTION", with: "Greek yogurt, peach, and fruit spread")
-        template = template.replacingOccurrences(of: "HW_MEAL_PROTEIN_COUNT", with: "10")
-        template = template.replacingOccurrences(of: "HW_MEAL_STARCH_COUNT", with: "5")
-        template = template.replacingOccurrences(of: "HW_MEAL_VEGGIES_COUNT", with: "3")
-        template = template.replacingOccurrences(of: "HW_MEAL_FRUIT_COUNT", with: "4")
-        template = template.replacingOccurrences(of: "HW_MEAL_FAT_COUNT", with: "5")
-        template = template.replacingOccurrences(of: "HW_MEAL_COMMENTS", with: "Good day comment")
-        return template
-        
-    }
-    func buildJournalDateTotals() -> String {
-        var template = Constants.JOURNAL_DATE_TOTALS
-        template = template.replacingOccurrences(of: "HW_DATE_TOTAL_PROTEIN", with: "10")
-        template = template.replacingOccurrences(of: "HW_DATE_TOTAL_STARCH", with: "5")
-        template = template.replacingOccurrences(of: "HW_DATE_TOTAL_VEGGIES", with: "3")
-        template = template.replacingOccurrences(of: "HW_DATE_TOTAL_FRUIT", with: "4")
-        template = template.replacingOccurrences(of: "HW_DATE_TOTAL_FAT", with: "5")
-        return template
-        
-    }
-    func buildJournalDateStats() -> String {
-        var template = Constants.JOURNAL_DATE_STATS
-        template = template.replacingOccurrences(of: "HW_DATE_WATER_CHECKS", with: "✔︎✔︎✔︎✔︎✔︎✔︎✔︎✔︎")
-        template = template.replacingOccurrences(of: "HW_DATE_SUPPLEMENTS_CHECKS", with: "✔︎✔︎✔︎")
-        template = template.replacingOccurrences(of: "HW_DATE_EXERCISE_CHECKS", with: "✔︎")
-
-        return template
-    }
-    
-    func buildJournalDateComments() -> String {
-        var template = Constants.JOURNAL_DATE_COMMENTS
-        template = template.replacingOccurrences(of: "HW_COMMENTS", with: "Full compliance and lost weight")
-        return template
-    }
-    func buildJournalDateTrailer() -> String {
-        var template = Constants.JOURNAL_DATE_TRAILER
-        return template
-    }
     
     
     
@@ -220,28 +172,53 @@ class ClientViewController: UIViewController, MFMailComposeViewControllerDelegat
         getUser()
     }
     
-    // MARK - helper methods
-    
-    func formatJournal(clientNode node : [String : Any?]) -> String? {
-        // assumes self.clientJournal loaded from Firebase
+    // MARK: - Charting Methods
+    func lineChartUpdate(clientNode node : [String : Any?]) {
         guard node.count > 0 else {
-            return nil
+            return
         }
-        var journalMockup = Constants.JOURNAL_DAY_HEADER
-        journalMockup += buildJournalDailyTotalsRow(dateOfMealString: "08-26-2018", settingsNode: (clientNode["Settings"] as? [String : Any?])!)
-        journalMockup += buildJournalMealRow()
-        journalMockup += buildJournalDateTotals()
-        journalMockup += buildJournalDateStats()
-        journalMockup += buildJournalDateComments()
-        journalMockup += buildJournalDateTrailer()
+        let nodeJournal = node[KeysForFirebase.NODE_JOURNAL] as? [String: Any?]
+        if nodeJournal == nil {
+            return
+        }
+        let sortedKeysDates = Array(nodeJournal!.keys).sorted(by: <)
+        var startDate = ""
+        var startWeight = 0.0
+        var chartDataPoint = [String : Double]()
+        for weightDate in sortedKeysDates {
+            let nodeDate = nodeJournal![weightDate] as? [String : Any?] ?? [:]
+            if startDate == "" {
+                startDate = weightDate // earliest date
+                startWeight = nodeDate[KeysForFirebase.WEIGHED] as? Double ?? 0.0
+                chartDataPoint[weightDate] = 0.0
+            } else {
+                chartDataPoint[weightDate] = (nodeDate[KeysForFirebase.WEIGHED] as? Double ?? 0.0) - startWeight
+            }
+        }
+
+        // now format chart series
+        var chartSeries = [ChartDataEntry]()
+        var chartLabels = [String]()
+        var xValue = 0.0
+        for weightDate in sortedKeysDates {
+            let weightDateAsDate = makeDateFromString(dateAsString: weightDate)
+            let weightMonthSlashDayKey = weightDateAsDate.makeMonthSlashDayDisplayString()
+            let point = ChartDataEntry(x: xValue, y:  chartDataPoint[weightDate]!)
+            chartSeries.append(point)
+            chartLabels.append(weightMonthSlashDayKey)
+            xValue += 1.0
+        }
+        let weightDataSet = LineChartDataSet(values: chartSeries, label: "Weight Loss/Gain")
+        weightDataSet.valueColors = [UIColor .black]
+        let weightData = LineChartData(dataSet: weightDataSet)
+        lineChart.data = weightData
+        lineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: chartLabels)
+        lineChart.xAxis.granularity = 1
+        lineChart.xAxis.labelRotationAngle = -45.0
+        lineChart.chartDescription?.text = "The Healthy Way Maintenance Chart"
+        lineChart.notifyDataSetChanged()
         
-        let attrStr = try! NSAttributedString(
-            data: journalMockup.data(using: String.Encoding.unicode, allowLossyConversion: true)!,
-            options:[NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
-        journal.attributedText = attrStr
-        return "add html here"
     }
-    
     
     /*
     // MARK: - Navigation

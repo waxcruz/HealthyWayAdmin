@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22FE7178B440CC82D402B803 /* Pods_HealthyWayAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59339C59EB4527DE28F39C1B /* Pods_HealthyWayAdmin.framework */; };
 		3402AD88212E4FE700A6C650 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D4D8AE21299A9900BDAFF5 /* SignInViewController.swift */; };
 		3402AD89212E4FE700A6C650 /* CreateNewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B8733212CE251000E0320 /* CreateNewAccountViewController.swift */; };
 		3402AD8A212E4FE700A6C650 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D4D8AC21299A9900BDAFF5 /* AppDelegate.swift */; };
@@ -14,19 +15,51 @@
 		3402AD8C212E4FE700A6C650 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B873B212DA4A8000E0320 /* GlobalConstants.swift */; };
 		3402AD8D212E4FE700A6C650 /* ClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B8735212CE26D000E0320 /* ClientViewController.swift */; };
 		3402AD8E212E4FE700A6C650 /* ForgottenPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B8737212CE2AA000E0320 /* ForgottenPasswordViewController.swift */; };
-		3402AD90212E4FE700A6C650 /* Pods_HealthyWayAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E26648E50A8D60FDE8C298 /* Pods_HealthyWayAdmin.framework */; };
 		3402AD92212E4FE700A6C650 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D4D8B521299A9B00BDAFF5 /* LaunchScreen.storyboard */; };
 		3402AD94212E4FE700A6C650 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34D4D8B321299A9B00BDAFF5 /* Assets.xcassets */; };
 		3402AD95212E4FE700A6C650 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D4D8B021299A9900BDAFF5 /* Main.storyboard */; };
 		3402AD9E212F107100A6C650 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3402AD9D212F107100A6C650 /* SettingsViewController.swift */; };
 		348625F221359257005BA64D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 348625F121359256005BA64D /* GoogleService-Info.plist */; };
-		34CF0BDA213351680075F492 /* MyMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF0BD8213351680075F492 /* MyMethods.swift */; };
-		34CF0BDB213351680075F492 /* ExtendDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF0BD9213351680075F492 /* ExtendDate.swift */; };
+		34B065A4213910DC0062B727 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B065A2213910DC0062B727 /* ModelController.swift */; };
+		34B065A5213910DC0062B727 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B065A3213910DC0062B727 /* Model.swift */; };
+		34BD83F3213D97C00059C714 /* HealthyWayFramework.xcodeproj in Frameworks */ = {isa = PBXBuildFile; fileRef = 34BD83ED213D97840059C714 /* HealthyWayFramework.xcodeproj */; };
+		34BD83F6213D9BD60059C714 /* HealthyWayFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34BD83F2213D97840059C714 /* HealthyWayFramework.framework */; };
+		34BD83F7213D9BD60059C714 /* HealthyWayFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 34BD83F2213D97840059C714 /* HealthyWayFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		34BD83F1213D97840059C714 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34BD83ED213D97840059C714 /* HealthyWayFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 345B855C2132F12700E2D615;
+			remoteInfo = HealthyWayFramework;
+		};
+		34BD83F8213D9BD60059C714 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34BD83ED213D97840059C714 /* HealthyWayFramework.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 345B855B2132F12700E2D615;
+			remoteInfo = HealthyWayFramework;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		344BDE8121384B8300E63634 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				34BD83F7213D9BD60059C714 /* HealthyWayFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		0454DCD59AE6AC7967DB128B /* Pods-HealthyWayAdmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthyWayAdmin.release.xcconfig"; path = "Pods/Target Support Files/Pods-HealthyWayAdmin/Pods-HealthyWayAdmin.release.xcconfig"; sourceTree = "<group>"; };
-		0BB775AB7B4C686F843C26E8 /* Pods_LearnFirebaseAuthenticationAndAuthorization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearnFirebaseAuthenticationAndAuthorization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		33363D906D08CCF02EB84A3C /* Pods-HealthyWayAdmin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthyWayAdmin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HealthyWayAdmin/Pods-HealthyWayAdmin.debug.xcconfig"; sourceTree = "<group>"; };
 		3402AD9A212E4FE700A6C650 /* HealthyWayAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthyWayAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3402AD9B212E4FE700A6C650 /* HealthyWayAdmin copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "HealthyWayAdmin copy-Info.plist"; path = "/Users/waxcruz/Developer/HealthyWayAdminApp/HealthyWayAdmin/HealthyWayAdmin copy-Info.plist"; sourceTree = "<absolute>"; };
 		3402AD9C212EFD8B00A6C650 /* HealthyWayAdmin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HealthyWayAdmin.entitlements; sourceTree = "<group>"; };
@@ -37,16 +70,17 @@
 		348B8737212CE2AA000E0320 /* ForgottenPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgottenPasswordViewController.swift; sourceTree = "<group>"; };
 		348B8739212CE311000E0320 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		348B873B212DA4A8000E0320 /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
-		34CF0BD8213351680075F492 /* MyMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMethods.swift; sourceTree = "<group>"; };
-		34CF0BD9213351680075F492 /* ExtendDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendDate.swift; sourceTree = "<group>"; };
+		34B065A2213910DC0062B727 /* ModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
+		34B065A3213910DC0062B727 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		34BD83ED213D97840059C714 /* HealthyWayFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HealthyWayFramework.xcodeproj; path = ../../HealthyWayFrameworkFolder/HealthyWayFramework/HealthyWayFramework.xcodeproj; sourceTree = "<group>"; };
 		34D4D8AC21299A9900BDAFF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34D4D8AE21299A9900BDAFF5 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		34D4D8B121299A9900BDAFF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		34D4D8B321299A9B00BDAFF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34D4D8B621299A9B00BDAFF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34D4D8B821299A9B00BDAFF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		74E26648E50A8D60FDE8C298 /* Pods_HealthyWayAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthyWayAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8157AE5F3ACA656ADF1D2A1F /* Pods-HealthyWayAdmin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthyWayAdmin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HealthyWayAdmin/Pods-HealthyWayAdmin.debug.xcconfig"; sourceTree = "<group>"; };
+		59339C59EB4527DE28F39C1B /* Pods_HealthyWayAdmin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthyWayAdmin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92B827BDC141CE7882A73B51 /* Pods-HealthyWayAdmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthyWayAdmin.release.xcconfig"; path = "Pods/Target Support Files/Pods-HealthyWayAdmin/Pods-HealthyWayAdmin.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +88,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3402AD90212E4FE700A6C650 /* Pods_HealthyWayAdmin.framework in Frameworks */,
+				34BD83F3213D97C00059C714 /* HealthyWayFramework.xcodeproj in Frameworks */,
+				34BD83F6213D9BD60059C714 /* HealthyWayFramework.framework in Frameworks */,
+				22FE7178B440CC82D402B803 /* Pods_HealthyWayAdmin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,8 +100,8 @@
 		156806289D48AF88BDCC019D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8157AE5F3ACA656ADF1D2A1F /* Pods-HealthyWayAdmin.debug.xcconfig */,
-				0454DCD59AE6AC7967DB128B /* Pods-HealthyWayAdmin.release.xcconfig */,
+				33363D906D08CCF02EB84A3C /* Pods-HealthyWayAdmin.debug.xcconfig */,
+				92B827BDC141CE7882A73B51 /* Pods-HealthyWayAdmin.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -83,22 +119,28 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		34B065A1213910DC0062B727 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				34B065A2213910DC0062B727 /* ModelController.swift */,
+				34B065A3213910DC0062B727 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		34BD83EE213D97840059C714 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				34BD83F2213D97840059C714 /* HealthyWayFramework.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		34CF0BD2213338090075F492 /* SourceInHealthyWayApp */ = {
 			isa = PBXGroup;
 			children = (
-				34CF0BD7213351680075F492 /* Utilities */,
 			);
 			path = SourceInHealthyWayApp;
-			sourceTree = "<group>";
-		};
-		34CF0BD7213351680075F492 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				34CF0BD8213351680075F492 /* MyMethods.swift */,
-				34CF0BD9213351680075F492 /* ExtendDate.swift */,
-			);
-			name = Utilities;
-			path = ../../../../HealthyWayApp/HealthyWay/HealthyWay/Utilities;
 			sourceTree = "<group>";
 		};
 		34D4D8A021299A9900BDAFF5 = {
@@ -125,6 +167,7 @@
 		34D4D8AB21299A9900BDAFF5 /* HealthyWayAdminApp */ = {
 			isa = PBXGroup;
 			children = (
+				34B065A1213910DC0062B727 /* Model */,
 				348625F121359256005BA64D /* GoogleService-Info.plist */,
 				34CF0BD2213338090075F492 /* SourceInHealthyWayApp */,
 				348B873B212DA4A8000E0320 /* GlobalConstants.swift */,
@@ -140,8 +183,8 @@
 		F9247F2A80D169F32048ACF5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0BB775AB7B4C686F843C26E8 /* Pods_LearnFirebaseAuthenticationAndAuthorization.framework */,
-				74E26648E50A8D60FDE8C298 /* Pods_HealthyWayAdmin.framework */,
+				34BD83ED213D97840059C714 /* HealthyWayFramework.xcodeproj */,
+				59339C59EB4527DE28F39C1B /* Pods_HealthyWayAdmin.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -158,10 +201,12 @@
 				3402AD8F212E4FE700A6C650 /* Frameworks */,
 				3402AD91212E4FE700A6C650 /* Resources */,
 				3402AD96212E4FE700A6C650 /* [CP] Embed Pods Frameworks */,
+				344BDE8121384B8300E63634 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				34BD83F9213D9BD60059C714 /* PBXTargetDependency */,
 			);
 			name = HealthyWayAdmin;
 			productName = LearnFirebaseAuthenticationAndAuthorization;
@@ -198,12 +243,28 @@
 			mainGroup = 34D4D8A021299A9900BDAFF5;
 			productRefGroup = 34D4D8AA21299A9900BDAFF5 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 34BD83EE213D97840059C714 /* Products */;
+					ProjectRef = 34BD83ED213D97840059C714 /* HealthyWayFramework.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				3402AD85212E4FE700A6C650 /* HealthyWayAdmin */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		34BD83F2213D97840059C714 /* HealthyWayFramework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = HealthyWayFramework.framework;
+			remoteRef = 34BD83F1213D97840059C714 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3402AD91212E4FE700A6C650 /* Resources */ = {
@@ -245,6 +306,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-HealthyWayAdmin/Pods-HealthyWayAdmin-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -252,6 +314,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -272,17 +335,25 @@
 				3402AD88212E4FE700A6C650 /* SignInViewController.swift in Sources */,
 				3402AD89212E4FE700A6C650 /* CreateNewAccountViewController.swift in Sources */,
 				3402AD8A212E4FE700A6C650 /* AppDelegate.swift in Sources */,
+				34B065A4213910DC0062B727 /* ModelController.swift in Sources */,
 				3402AD8B212E4FE700A6C650 /* ChangePasswordViewController.swift in Sources */,
+				34B065A5213910DC0062B727 /* Model.swift in Sources */,
 				3402AD8C212E4FE700A6C650 /* GlobalConstants.swift in Sources */,
-				34CF0BDB213351680075F492 /* ExtendDate.swift in Sources */,
 				3402AD8D212E4FE700A6C650 /* ClientViewController.swift in Sources */,
-				34CF0BDA213351680075F492 /* MyMethods.swift in Sources */,
 				3402AD8E212E4FE700A6C650 /* ForgottenPasswordViewController.swift in Sources */,
 				3402AD9E212F107100A6C650 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		34BD83F9213D9BD60059C714 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HealthyWayFramework;
+			targetProxy = 34BD83F8213D9BD60059C714 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		34D4D8B021299A9900BDAFF5 /* Main.storyboard */ = {
@@ -306,8 +377,9 @@
 /* Begin XCBuildConfiguration section */
 		3402AD98212E4FE700A6C650 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8157AE5F3ACA656ADF1D2A1F /* Pods-HealthyWayAdmin.debug.xcconfig */;
+			baseConfigurationReference = 33363D906D08CCF02EB84A3C /* Pods-HealthyWayAdmin.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HealthyWayAdmin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -327,8 +399,9 @@
 		};
 		3402AD99212E4FE700A6C650 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0454DCD59AE6AC7967DB128B /* Pods-HealthyWayAdmin.release.xcconfig */;
+			baseConfigurationReference = 92B827BDC141CE7882A73B51 /* Pods-HealthyWayAdmin.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HealthyWayAdmin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
