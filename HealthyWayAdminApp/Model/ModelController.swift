@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import FirebaseAuth
 import HealthyWayFramework
 
 class ModelController
@@ -24,8 +25,8 @@ class ModelController
     var settingsInFirebase : Dictionary? = [:]
     var journalInFirebase : Dictionary? = [:]
     var mealContentsInFirebase : Dictionary? = [:]
-
-    
+    var clientNode : [String : Any?] = [:] // key is node type journal, settings, and mealContent
+    var clientErrorMessages : String = ""
     // MARK: - methods
     
     func startModel(){
@@ -34,6 +35,10 @@ class ModelController
     
     func stopModel(){
         ref.removeObserver(withHandle: refHandle)
+    }
+    
+    func getDatabaseRef() -> DatabaseReference {
+        return ref
     }
     
     func breakConnectionToFirebase(typeOfHandle handle : FirebaseHandleIdentifiers) {
@@ -395,6 +400,90 @@ class ModelController
         }
     }
     
+    // MARK - Authentication
+    
+    func loginUser(email : String, password : String, errorHandler : @escaping (_ : String) -> Void,  handler : @escaping ()-> Void) {
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            // ...
+            if user == nil {
+                errorHandler((error?.localizedDescription)!)
+            } else {
+                handler()
+            }
+        }
+    }
+    
+    func signoutUser() {
+        if Auth.auth().currentUser?.displayName != nil {
+            do {
+                print("Signing out user: ", Auth.auth().currentUser?.displayName! ?? "unknown user")
+                try Auth.auth().signOut()
+            } catch {
+                print("Sign out failed")
+            }
+        }
+
+    }
+    
+    func checkFirebaseConnected(handler : @escaping () -> Void) -> Void {
+        
+        let healthywayDatabaseRef = ref
+        let connectedRef = healthywayDatabaseRef.database.reference(withPath: ".info/connected")
+        connectedRef.observe(.value, with: { snapshot in
+
+           if snapshot.value as? Bool ?? false {
+                print("Connected to Firebase")
+            } else {
+                print("Not connected to Firebase")
+            }
+           handler()
+        })
+    }
+    
+    func getNodeOfClient(email : String, errorHandler : @escaping (_ : String) -> Void,  handler : @escaping ()-> Void) {
+        clientNode = [:]
+        clientErrorMessages = ""
+        let firebaseEmail = makeFirebaseEmailKey(email: email)
+        let emailsRef = ref.child("emails").child(firebaseEmail)
+        emailsRef.observeSingleEvent(of: .value, with:  { (snapshot)
+            in
+            let nodeEmailsValue = snapshot.value as? [String : Any?] ?? [:]
+            let clientUID = nodeEmailsValue["uid"] as? String
+            if clientUID == nil {
+                self.clientErrorMessages = "No client found with that email address"
+                errorHandler(self.clientErrorMessages)
+            }
+            let usersRef = self.ref.child("users").child(clientUID!)
+            usersRef.observeSingleEvent(of: .value, with:  { (snapshot)
+                in
+                let nodeUsersValue = snapshot.value as? [String : Any?] ?? [:]
+                let userEmail = nodeUsersValue["email"] as? String
+                let checkEmail = restoreEmail(firebaseEmailKey: userEmail!)
+                if checkEmail == email {
+                    let userDataRef = self.ref.child("userData").child(clientUID!)
+                    userDataRef.observeSingleEvent(of: .value, with:
+                        { (snapshot)
+                            in
+                            self.clientNode = snapshot.value as? [String : Any?] ?? [:]
+                            handler()
+                    }) { (error) in
+                        self.clientErrorMessages = "Encountered error, " + error.localizedDescription +
+                        ", searching for client data"
+                        errorHandler(self.clientErrorMessages)
+                    }
+                } else {
+                    self.clientErrorMessages = "Mismatch between emails and uids."
+                    errorHandler(self.clientErrorMessages)
+                }
+            }) { (error) in
+                self.clientErrorMessages = "Encountered error, " + error.localizedDescription + ", searching for client UID"
+                errorHandler(self.clientErrorMessages)
+            }
+        })  { (error) in
+            self.clientErrorMessages = "Encountered error, " + error.localizedDescription + ", searching for client email"
+            errorHandler(self.clientErrorMessages)
+        }
+    }
     
 }
 

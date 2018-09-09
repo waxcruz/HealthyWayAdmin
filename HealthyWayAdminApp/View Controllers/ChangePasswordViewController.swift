@@ -9,9 +9,13 @@
 import UIKit
 import FirebaseAuth
 import Firebase
-
+import HealthyWayFramework
 
 class ChangePasswordViewController: UIViewController {
+    // MARK: - global model controller
+    var modelController : ModelController!
+    
+    @IBOutlet weak var copyright: UILabel!
     @IBOutlet weak var oldPassword: UITextField!
     @IBOutlet weak var newPassword: UITextField!
     @IBOutlet weak var confirmPassword: UITextField!
@@ -27,6 +31,7 @@ class ChangePasswordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        copyright.text = makeCopyright()
         ref = Database.database().reference()
         oldPassword.addTarget(self, action: #selector(ChangePasswordViewController.textFieldDidEnd(_:)), for: UIControlEvents.editingDidEndOnExit)
         newPassword.addTarget(self, action: #selector(ChangePasswordViewController.textFieldDidEnd(_:)), for: UIControlEvents.editingDidEndOnExit)

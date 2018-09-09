@@ -21,13 +21,25 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hwadmin1024" translatesAutoresizingMaskIntoConstraints="NO" id="3lE-Lm-m7K">
                                 <rect key="frame" x="2" y="22" width="371" height="643"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright @ 2018 The Healthy Way" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ob5-Gk-hyP" userLabel="copyright">
+                                <rect key="frame" x="12" y="655" width="343" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="h0t-KV-NLl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3lE-Lm-m7K" secondAttribute="trailing" constant="2" id="1AF-9z-rdr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ob5-Gk-hyP" secondAttribute="bottom" constant="2" id="3xZ-o3-wuB"/>
                             <constraint firstItem="3lE-Lm-m7K" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="2" id="Oo7-xf-ZPP"/>
                             <constraint firstItem="3lE-Lm-m7K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="2" id="TkI-x2-EXe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3lE-Lm-m7K" secondAttribute="bottom" constant="2" id="Y3i-Ei-lIW"/>
+                            <constraint firstItem="Ob5-Gk-hyP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="cVT-UF-7iF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ob5-Gk-hyP" secondAttribute="trailing" constant="20" id="pOH-JN-C3f"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

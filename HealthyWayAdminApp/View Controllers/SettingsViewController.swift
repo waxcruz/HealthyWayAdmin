@@ -8,13 +8,17 @@
 
 import UIKit
 import FirebaseAuth
+import HealthyWayFramework
 
 class SettingsViewController: UIViewController {
-
+    // MARK: - global model controller
+    var modelController : ModelController!
+    
+    @IBOutlet weak var copyright: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        copyright.text = makeCopyright()
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,14 +40,20 @@ class SettingsViewController: UIViewController {
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let vc = segue.destination
+        if vc .isKind(of: ChangePasswordViewController.self) {
+            (vc as! ChangePasswordViewController).modelController = modelController
+        } else {
+            print("Unknown segue (", vc.debugDescription, ") in ClientViewController")
+        }
     }
-    */
+    
 
 }

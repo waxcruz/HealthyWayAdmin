@@ -9,10 +9,13 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import HealthyWayFramework
 
 class SignInViewController: UIViewController {
-    // MARK - properties
+    // MARK: - global model controller
+    var modelController : ModelController!
 
+    // MARK - properties
     var emailEntered : String?
     var passwordEntered : String?
 
@@ -21,15 +24,13 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var message: UITextView!
-
+    @IBOutlet weak var copyright: UILabel!
     
-    // MARK - Firebase properties
-    var ref: DatabaseReference!
-    var handle: AuthStateDidChangeListenerHandle?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ref = Database.database().reference()
+        copyright.text = makeCopyright()
         email.addTarget(self, action: #selector(SignInViewController.textFieldDidEnd(_:)), for: UIControlEvents.editingDidEndOnExit)
         password.addTarget(self, action: #selector(SignInViewController.textFieldDidEnd(_:)), for: UIControlEvents.editingDidEndOnExit)
         message.textContainer.lineBreakMode = NSLineBreakMode.byWordWrapping
@@ -45,15 +46,10 @@ class SignInViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            // ...
-            NSLog("user sign-in state changed")
-        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        Auth.auth().removeStateDidChangeListener(handle!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,23 +61,14 @@ class SignInViewController: UIViewController {
     @IBAction func login(_ sender: Any) {
         email.resignFirstResponder()
         password.resignFirstResponder()
-        if Auth.auth().currentUser != nil {
-            do {
-                try Auth.auth().signOut()
-            } catch {
-                print("Sign out failed")
-            }
-        }
+        modelController.signoutUser()
         emailEntered = email.text
         passwordEntered = password.text
-        Auth.auth().signIn(withEmail: emailEntered!, password: passwordEntered!) { (user, error) in
-            // ...
-            if user == nil {
-                self.message.text = error?.localizedDescription
-            } else {
-                self.getUserData()
-            }
-        }
+        modelController.loginUser(email: emailEntered!, password: passwordEntered!, errorHandler: authErrorDisplay, handler: getUserData)
+    }
+    
+    func authErrorDisplay(errorMessage : String) {
+        message.text = errorMessage
     }
     
     @IBAction func unwindToSignInViewController(segue:UIStoryboardSegue) { }
@@ -90,21 +77,36 @@ class SignInViewController: UIViewController {
     
     // MARK - process data
     func getUserData() {
-        // let userID = Auth.auth().currentUser?.uid
-        ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get user value
-//            print("entering firebase return of data")
-//            if let value = snapshot.value as? NSDictionary {
-//                for (key, email) in value {
-//                    print(key, email)
-//                }
-//            }
             self.performSegue(withIdentifier: Constants.SEGUE_FROM_SIGNIN_TO_CLIENT_ID, sender: nil)
-        })
-        { (error) in
-            self.message.text = error.localizedDescription + " attempting to access users"
-        }
-        
     }
+    
+    
+    
+ 
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+
+        let vc = segue.destination
+        if vc .isKind(of: ForgottenPasswordViewController.self) {
+            (vc as! ForgottenPasswordViewController).modelController = modelController
+        } else {
+            if vc .isKind(of: CreateNewAccountViewController.self) {
+                (vc as! CreateNewAccountViewController).modelController = modelController
+            } else {
+                if vc .isKind(of: ClientViewController.self) {
+                    (vc as! ClientViewController).modelController = modelController
+                }
+            }
+        }
+
+     }
+
+
+    
+    
 }
 

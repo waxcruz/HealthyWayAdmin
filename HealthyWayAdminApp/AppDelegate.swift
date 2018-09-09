@@ -8,19 +8,48 @@
 
 import UIKit
 import Firebase
+import HealthyWayFramework
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var model = ModelController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        model.startModel()
+        model.checkFirebaseConnected(handler: showFirstViewController)
         return true
     }
 
+    
+    func showFirstViewController(){
+        // Set the window to the dimensions of the device
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        // Grab a reference to whichever storyboard you have the ViewController within
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        // Grab a reference to the ViewController you want to show 1st.
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "SignInVC") // HealthyWayTabBarControllerID
+        
+        // Set that ViewController as the rootViewController
+        self.window?.rootViewController = initialViewController
+        
+        // Make sure correct view controller loaded
+        if let vc = window?.rootViewController as? SignInViewController { // Login View
+            vc.modelController = model
+        }
+        
+        
+        // Sets our window up in front
+        self.window?.makeKeyAndVisible()
+        
+        
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

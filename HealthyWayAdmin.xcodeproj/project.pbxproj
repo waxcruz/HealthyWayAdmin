@@ -20,8 +20,8 @@
 		3402AD95212E4FE700A6C650 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D4D8B021299A9900BDAFF5 /* Main.storyboard */; };
 		3402AD9E212F107100A6C650 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3402AD9D212F107100A6C650 /* SettingsViewController.swift */; };
 		348625F221359257005BA64D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 348625F121359256005BA64D /* GoogleService-Info.plist */; };
+		34ACF4A92142D0EE0046EBCD /* LoadingPleaseWaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ACF4A82142D0EE0046EBCD /* LoadingPleaseWaitViewController.swift */; };
 		34B065A4213910DC0062B727 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B065A2213910DC0062B727 /* ModelController.swift */; };
-		34B065A5213910DC0062B727 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B065A3213910DC0062B727 /* Model.swift */; };
 		34BD83F3213D97C00059C714 /* HealthyWayFramework.xcodeproj in Frameworks */ = {isa = PBXBuildFile; fileRef = 34BD83ED213D97840059C714 /* HealthyWayFramework.xcodeproj */; };
 		34BD83F6213D9BD60059C714 /* HealthyWayFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34BD83F2213D97840059C714 /* HealthyWayFramework.framework */; };
 		34BD83F7213D9BD60059C714 /* HealthyWayFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 34BD83F2213D97840059C714 /* HealthyWayFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -70,8 +70,8 @@
 		348B8737212CE2AA000E0320 /* ForgottenPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgottenPasswordViewController.swift; sourceTree = "<group>"; };
 		348B8739212CE311000E0320 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		348B873B212DA4A8000E0320 /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
+		34ACF4A82142D0EE0046EBCD /* LoadingPleaseWaitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingPleaseWaitViewController.swift; sourceTree = "<group>"; };
 		34B065A2213910DC0062B727 /* ModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
-		34B065A3213910DC0062B727 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		34BD83ED213D97840059C714 /* HealthyWayFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HealthyWayFramework.xcodeproj; path = ../../HealthyWayFrameworkFolder/HealthyWayFramework/HealthyWayFramework.xcodeproj; sourceTree = "<group>"; };
 		34D4D8AC21299A9900BDAFF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34D4D8AE21299A9900BDAFF5 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +115,7 @@
 				348B8737212CE2AA000E0320 /* ForgottenPasswordViewController.swift */,
 				348B8739212CE311000E0320 /* ChangePasswordViewController.swift */,
 				3402AD9D212F107100A6C650 /* SettingsViewController.swift */,
+				34ACF4A82142D0EE0046EBCD /* LoadingPleaseWaitViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -123,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				34B065A2213910DC0062B727 /* ModelController.swift */,
-				34B065A3213910DC0062B727 /* Model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -332,12 +332,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34ACF4A92142D0EE0046EBCD /* LoadingPleaseWaitViewController.swift in Sources */,
 				3402AD88212E4FE700A6C650 /* SignInViewController.swift in Sources */,
 				3402AD89212E4FE700A6C650 /* CreateNewAccountViewController.swift in Sources */,
 				3402AD8A212E4FE700A6C650 /* AppDelegate.swift in Sources */,
 				34B065A4213910DC0062B727 /* ModelController.swift in Sources */,
 				3402AD8B212E4FE700A6C650 /* ChangePasswordViewController.swift in Sources */,
-				34B065A5213910DC0062B727 /* Model.swift in Sources */,
 				3402AD8C212E4FE700A6C650 /* GlobalConstants.swift in Sources */,
 				3402AD8D212E4FE700A6C650 /* ClientViewController.swift in Sources */,
 				3402AD8E212E4FE700A6C650 /* ForgottenPasswordViewController.swift in Sources */,

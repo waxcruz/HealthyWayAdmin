@@ -13,11 +13,18 @@ import HealthyWayFramework
 
 
 class CreateNewAccountViewController: UIViewController {
+    // MARK: - global model controller
+    var modelController : ModelController!
+    
     // MARK - Sign-in fields
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var confirmPassword: UITextField!
     @IBOutlet weak var message: UITextView!
+    @IBOutlet weak var copyright: UILabel!
+    
+    
+    
     // MARK - Firebase properties
     var ref: DatabaseReference!
     var handle: AuthStateDidChangeListenerHandle?
@@ -28,6 +35,7 @@ class CreateNewAccountViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        copyright.text = makeCopyright()
         ref = Database.database().reference()
         email.addTarget(self, action: #selector(CreateNewAccountViewController.textFieldDidEnd(_:)), for: UIControlEvents.editingDidEndOnExit)
         password.addTarget(self, action: #selector(CreateNewAccountViewController.textFieldDidEnd(_:)), for: UIControlEvents.editingDidEndOnExit)
@@ -37,15 +45,15 @@ class CreateNewAccountViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            // ...
-            NSLog("CreateNewAccount: user sign-in state changed")
-        }
+//        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+//            // ...
+//            NSLog("CreateNewAccount: user sign-in state changed")
+//        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        Auth.auth().removeStateDidChangeListener(handle!)
+//        Auth.auth().removeStateDidChangeListener(handle!)
     }
     
     @objc func textFieldDidEnd(_ textField: UITextField){
@@ -63,6 +71,7 @@ class CreateNewAccountViewController: UIViewController {
         password.resignFirstResponder()
         confirmPassword.resignFirstResponder()
         message.text = ""
+        
         if Auth.auth().currentUser != nil {
             do {
                 try Auth.auth().signOut()

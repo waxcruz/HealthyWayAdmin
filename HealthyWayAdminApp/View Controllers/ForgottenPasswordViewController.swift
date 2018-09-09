@@ -9,9 +9,13 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import HealthyWayFramework
 
 class ForgottenPasswordViewController: UIViewController {
-    // MARK - properties
+    // MARK: - global model controller
+    var modelController : ModelController!
+    
+   // MARK - properties
     var emailEntered : String?
     var hwClientPasswordEntered : String?
     var newPasswordEntered : String?
@@ -20,6 +24,7 @@ class ForgottenPasswordViewController: UIViewController {
     // MARK - Sign-in fields
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var message: UITextView!
+    @IBOutlet weak var copyright: UILabel!
     
     // MARK - Firebase properties
     var ref: DatabaseReference!
@@ -27,6 +32,7 @@ class ForgottenPasswordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        copyright.text = makeCopyright()
         ref = Database.database().reference()
         email.addTarget(self, action: #selector(ForgottenPasswordViewController.textFieldDidEnd(_:)), for: UIControlEvents.editingDidEndOnExit)
         message.textContainer.lineBreakMode = NSLineBreakMode.byWordWrapping

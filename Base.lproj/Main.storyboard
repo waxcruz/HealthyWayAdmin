@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DK9-m8-rdZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,7 +14,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SignInViewController" customModule="HealthyWayAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInVC" id="BYZ-38-t0r" customClass="SignInViewController" customModule="HealthyWayAdmin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,9 +22,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xs9-pq-chh" userLabel="Contents">
                                 <rect key="frame" x="2" y="22" width="371" height="643"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in to Healthy Way" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yd6-58-vag">
-                                        <rect key="frame" x="37" y="3" width="297.5" height="38.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in to Healthy Way Admin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yd6-58-vag">
+                                        <rect key="frame" x="14" y="3" width="344.5" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                         <color key="textColor" red="0.2901960784" green="0.13725490200000001" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -92,16 +92,25 @@
                                         </subviews>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Gui-SI-1s1" userLabel="Message Text View">
-                                        <rect key="frame" x="-0.5" y="384" width="371" height="257"/>
+                                        <rect key="frame" x="-0.5" y="371" width="371" height="257"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright @ 2018 The Healthy Way" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3o-bq-GQi" userLabel="copyright">
+                                        <rect key="frame" x="100" y="625" width="171" height="10"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="bKy-LS-e9c"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Gui-SI-1s1" firstAttribute="centerX" secondItem="xs9-pq-chh" secondAttribute="centerX" id="BzN-jL-03r"/>
-                                    <constraint firstAttribute="bottom" secondItem="Gui-SI-1s1" secondAttribute="bottom" constant="2" id="D6C-EL-XzB"/>
+                                    <constraint firstAttribute="bottom" secondItem="Gui-SI-1s1" secondAttribute="bottom" constant="15" id="D6C-EL-XzB"/>
                                     <constraint firstItem="Gui-SI-1s1" firstAttribute="height" secondItem="xs9-pq-chh" secondAttribute="height" multiplier="0.4" id="Ghu-sx-1Zt"/>
                                     <constraint firstItem="Gui-SI-1s1" firstAttribute="width" secondItem="xs9-pq-chh" secondAttribute="width" id="ITn-Eg-Q2d"/>
                                     <constraint firstItem="uBB-Mj-62w" firstAttribute="top" secondItem="xs9-pq-chh" secondAttribute="top" constant="50" id="Lwc-SG-UlL"/>
@@ -114,13 +123,16 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xs9-pq-chh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="2" id="1aU-n6-poV"/>
+                            <constraint firstItem="F3o-bq-GQi" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="B1Z-hU-sRR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xs9-pq-chh" secondAttribute="bottom" constant="2" id="HjR-gT-CNP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="F3o-bq-GQi" secondAttribute="bottom" constant="10" id="VAC-1g-Wd0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xs9-pq-chh" secondAttribute="trailing" constant="2" id="jza-f5-Ysd"/>
                             <constraint firstItem="xs9-pq-chh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="2" id="x1P-mx-f0E"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="copyright" destination="F3o-bq-GQi" id="Dgz-LL-Xdb"/>
                         <outlet property="email" destination="pqG-3S-R1S" id="UcA-b3-z5u"/>
                         <outlet property="message" destination="Gui-SI-1s1" id="YPz-4g-rb9"/>
                         <outlet property="password" destination="qln-fo-tWd" id="Bkc-Lb-M3S"/>
@@ -227,10 +239,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WYn-dI-boT" userLabel="Weight Chart">
-                                        <rect key="frame" x="-0.5" y="389.5" width="371" height="225"/>
+                                        <rect key="frame" x="-0.5" y="389.5" width="371" height="193"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MG8-sz-5bb" userLabel="Chart" customClass="LineChartView" customModule="Charts">
-                                                <rect key="frame" x="2" y="2" width="367" height="221"/>
+                                                <rect key="frame" x="2" y="2" width="367" height="189"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                         </subviews>
@@ -243,7 +255,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFm-jH-KBS" userLabel="Message">
-                                        <rect key="frame" x="-0.5" y="609" width="371" height="32"/>
+                                        <rect key="frame" x="0.0" y="584" width="371" height="32"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Messages" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4cM-gF-9Js" userLabel="message">
                                                 <rect key="frame" x="2" y="2" width="367" height="28"/>
@@ -260,14 +272,24 @@
                                             <constraint firstAttribute="bottom" secondItem="4cM-gF-9Js" secondAttribute="bottom" constant="2" id="swK-9f-GLF"/>
                                         </constraints>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright @ 2018 The Healthy Way" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWc-2j-Rfl" userLabel="copyright">
+                                        <rect key="frame" x="100" y="633" width="171" height="10"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="gz9-ee-nFE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Dd7-uM-ExZ" firstAttribute="height" secondItem="wfX-Da-ROt" secondAttribute="height" id="064-fq-hjM"/>
                                     <constraint firstItem="WYn-dI-boT" firstAttribute="top" secondItem="3xX-b4-KgC" secondAttribute="bottom" constant="2" id="2Ej-G5-7mE"/>
+                                    <constraint firstItem="eFm-jH-KBS" firstAttribute="top" secondItem="WYn-dI-boT" secondAttribute="bottom" constant="2" id="2MH-8k-YQs"/>
                                     <constraint firstItem="WYn-dI-boT" firstAttribute="centerX" secondItem="spa-9q-EFf" secondAttribute="centerX" id="3kF-Nc-swP"/>
                                     <constraint firstItem="eFm-jH-KBS" firstAttribute="width" secondItem="spa-9q-EFf" secondAttribute="width" id="4r3-ao-bcN"/>
-                                    <constraint firstItem="WYn-dI-boT" firstAttribute="height" secondItem="spa-9q-EFf" secondAttribute="height" multiplier="0.35" id="9Tc-Hc-wF1"/>
+                                    <constraint firstItem="WYn-dI-boT" firstAttribute="height" secondItem="spa-9q-EFf" secondAttribute="height" multiplier="0.3" id="9Tc-Hc-wF1"/>
                                     <constraint firstItem="WYn-dI-boT" firstAttribute="width" secondItem="spa-9q-EFf" secondAttribute="width" id="9wy-xM-tHW"/>
                                     <constraint firstItem="eFm-jH-KBS" firstAttribute="height" secondItem="spa-9q-EFf" secondAttribute="height" multiplier="0.05" id="Axb-hM-7GO"/>
                                     <constraint firstAttribute="trailing" secondItem="wfX-Da-ROt" secondAttribute="trailing" constant="2" id="DDL-oK-SiP"/>
@@ -278,7 +300,6 @@
                                     <constraint firstItem="Dd7-uM-ExZ" firstAttribute="centerX" secondItem="wfX-Da-ROt" secondAttribute="centerX" id="hKk-1L-XyH"/>
                                     <constraint firstItem="Dd7-uM-ExZ" firstAttribute="width" secondItem="wfX-Da-ROt" secondAttribute="width" id="lDb-Kg-af7"/>
                                     <constraint firstItem="3xX-b4-KgC" firstAttribute="height" secondItem="spa-9q-EFf" secondAttribute="height" multiplier="0.5" id="myf-qk-fdl"/>
-                                    <constraint firstAttribute="bottom" secondItem="eFm-jH-KBS" secondAttribute="bottom" constant="2" id="vPK-PI-G9o"/>
                                     <constraint firstItem="wfX-Da-ROt" firstAttribute="top" secondItem="spa-9q-EFf" secondAttribute="top" constant="2" id="wZU-RG-LpN"/>
                                     <constraint firstItem="3xX-b4-KgC" firstAttribute="top" secondItem="Dd7-uM-ExZ" secondAttribute="bottom" constant="2" id="xUV-tJ-b0Y"/>
                                     <constraint firstItem="3xX-b4-KgC" firstAttribute="centerX" secondItem="spa-9q-EFf" secondAttribute="centerX" id="zHc-Yk-6Y0"/>
@@ -287,7 +308,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="iWc-2j-Rfl" firstAttribute="centerX" secondItem="7h2-F6-uGX" secondAttribute="centerX" id="5ci-5e-UMA"/>
                             <constraint firstItem="7h2-F6-uGX" firstAttribute="trailing" secondItem="spa-9q-EFf" secondAttribute="trailing" constant="2" id="BCH-2y-dri"/>
+                            <constraint firstItem="7h2-F6-uGX" firstAttribute="bottom" secondItem="iWc-2j-Rfl" secondAttribute="bottom" constant="2" id="TZV-aY-yfQ"/>
                             <constraint firstItem="spa-9q-EFf" firstAttribute="leading" secondItem="7h2-F6-uGX" secondAttribute="leading" constant="2" id="rUP-v8-Jlm"/>
                             <constraint firstItem="spa-9q-EFf" firstAttribute="top" secondItem="7h2-F6-uGX" secondAttribute="top" constant="2" id="wMM-yf-Tia"/>
                             <constraint firstItem="7h2-F6-uGX" firstAttribute="bottom" secondItem="spa-9q-EFf" secondAttribute="bottom" constant="2" id="zHO-zY-Usd"/>
@@ -296,6 +319,7 @@
                     </view>
                     <connections>
                         <outlet property="clientEmail" destination="g4A-vI-83y" id="1T1-sm-UD3"/>
+                        <outlet property="copyright" destination="iWc-2j-Rfl" id="Fyw-ZU-adO"/>
                         <outlet property="journal" destination="T5B-cC-Yo5" id="o6F-Le-4Ed"/>
                         <outlet property="lineChart" destination="MG8-sz-5bb" id="hjs-9y-786"/>
                         <outlet property="message" destination="4cM-gF-9Js" id="oxx-u9-uRo"/>
@@ -358,6 +382,15 @@
                                             <constraint firstItem="8Ub-pX-b7U" firstAttribute="width" secondItem="L2q-Ew-BmG" secondAttribute="width" id="Wo2-T3-HSv"/>
                                         </constraints>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright @ 2018 The Healthy Way" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9M-Tv-t5g" userLabel="copyright">
+                                        <rect key="frame" x="100" y="633" width="171" height="10"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="vej-Uv-lvd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -371,14 +404,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="e9M-Tv-t5g" firstAttribute="centerX" secondItem="5uG-Qt-AZ2" secondAttribute="centerX" id="Dv9-VX-kj8"/>
                             <constraint firstItem="hhD-2F-Pty" firstAttribute="leading" secondItem="5uG-Qt-AZ2" secondAttribute="leading" constant="2" id="Fg8-1y-VWb"/>
                             <constraint firstItem="5uG-Qt-AZ2" firstAttribute="trailing" secondItem="hhD-2F-Pty" secondAttribute="trailing" constant="2" id="eGe-ie-Lpn"/>
                             <constraint firstItem="hhD-2F-Pty" firstAttribute="top" secondItem="5uG-Qt-AZ2" secondAttribute="top" constant="2" id="fv1-Fk-8Kg"/>
+                            <constraint firstItem="5uG-Qt-AZ2" firstAttribute="bottom" secondItem="e9M-Tv-t5g" secondAttribute="bottom" constant="2" id="gEz-gz-M02"/>
                             <constraint firstItem="5uG-Qt-AZ2" firstAttribute="bottom" secondItem="hhD-2F-Pty" secondAttribute="bottom" constant="2" id="yzS-RT-BDh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5uG-Qt-AZ2"/>
                     </view>
                     <connections>
+                        <outlet property="copyright" destination="e9M-Tv-t5g" id="idV-NH-sq9"/>
                         <segue destination="EO2-HW-u4r" kind="unwind" identifier="unwindBackToHomeID" unwindAction="unwindToSignInViewControllerWithSegue:" id="vOB-Wj-sWB"/>
                     </connections>
                 </viewController>
@@ -469,11 +505,20 @@
                                         </subviews>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="j8C-Q3-3d9" userLabel="Message Text View">
-                                        <rect key="frame" x="-0.5" y="386.5" width="371" height="258.5"/>
+                                        <rect key="frame" x="-0.5" y="405.5" width="371" height="226.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright @ 2018 The Healthy Way" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lvo-eX-YT0" userLabel="copyright">
+                                        <rect key="frame" x="100" y="645" width="171" height="10"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="iR9-mu-hjL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -482,9 +527,9 @@
                                     <constraint firstItem="Uy4-Qe-f0O" firstAttribute="top" secondItem="vlW-Dw-x8I" secondAttribute="top" constant="3" id="DbS-bs-6f2"/>
                                     <constraint firstItem="j8C-Q3-3d9" firstAttribute="centerX" secondItem="vlW-Dw-x8I" secondAttribute="centerX" id="IUh-Vg-84i"/>
                                     <constraint firstItem="Uy4-Qe-f0O" firstAttribute="centerX" secondItem="vlW-Dw-x8I" secondAttribute="centerX" id="SZK-tP-a3o"/>
-                                    <constraint firstItem="j8C-Q3-3d9" firstAttribute="height" secondItem="vlW-Dw-x8I" secondAttribute="height" multiplier="0.4" id="d2u-V7-oJO"/>
+                                    <constraint firstItem="j8C-Q3-3d9" firstAttribute="height" secondItem="vlW-Dw-x8I" secondAttribute="height" multiplier="0.35" id="d2u-V7-oJO"/>
                                     <constraint firstItem="j8C-Q3-3d9" firstAttribute="width" secondItem="vlW-Dw-x8I" secondAttribute="width" id="oRB-YP-7no"/>
-                                    <constraint firstAttribute="bottom" secondItem="j8C-Q3-3d9" secondAttribute="bottom" constant="2" id="tF8-iG-LeK"/>
+                                    <constraint firstAttribute="bottom" secondItem="j8C-Q3-3d9" secondAttribute="bottom" constant="15" id="tF8-iG-LeK"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -493,12 +538,15 @@
                             <constraint firstItem="5iq-sN-WjL" firstAttribute="bottom" secondItem="vlW-Dw-x8I" secondAttribute="bottom" constant="10" id="asa-KD-P2B"/>
                             <constraint firstItem="vlW-Dw-x8I" firstAttribute="leading" secondItem="5iq-sN-WjL" secondAttribute="leading" constant="2" id="ces-77-Ybb"/>
                             <constraint firstItem="5iq-sN-WjL" firstAttribute="trailing" secondItem="vlW-Dw-x8I" secondAttribute="trailing" constant="2" id="eZD-AT-ME9"/>
+                            <constraint firstItem="5iq-sN-WjL" firstAttribute="bottom" secondItem="Lvo-eX-YT0" secondAttribute="bottom" constant="2" id="hda-pf-zLO"/>
                             <constraint firstItem="5iq-sN-WjL" firstAttribute="top" secondItem="vlW-Dw-x8I" secondAttribute="top" constant="10" id="igU-Fo-PMM"/>
+                            <constraint firstItem="Lvo-eX-YT0" firstAttribute="centerX" secondItem="5iq-sN-WjL" secondAttribute="centerX" id="mZt-HG-0Bl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5iq-sN-WjL"/>
                     </view>
                     <connections>
                         <outlet property="confirmPassword" destination="4Md-Ro-VQF" id="FOZ-8M-AyH"/>
+                        <outlet property="copyright" destination="Lvo-eX-YT0" id="bso-7T-tiD"/>
                         <outlet property="message" destination="j8C-Q3-3d9" id="6Rt-ip-PPq"/>
                         <outlet property="newPassword" destination="uy2-Ot-9RM" id="Tii-dD-Woz"/>
                         <outlet property="oldPassword" destination="1ms-Ks-Sx3" id="8TT-1V-BwA"/>
@@ -566,7 +614,7 @@
                                         </subviews>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kkK-II-gjw" userLabel="Message Text View">
-                                        <rect key="frame" x="-0.5" y="386.5" width="371" height="258.5"/>
+                                        <rect key="frame" x="-0.5" y="373.5" width="371" height="258.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -579,22 +627,34 @@
                                     <constraint firstItem="HGw-HS-FsY" firstAttribute="top" secondItem="f3d-zD-0Ux" secondAttribute="top" constant="50" id="Zm4-4H-rqI"/>
                                     <constraint firstItem="rW2-Yu-27W" firstAttribute="top" secondItem="f3d-zD-0Ux" secondAttribute="top" constant="3" id="d7a-yi-6uw"/>
                                     <constraint firstItem="kkK-II-gjw" firstAttribute="centerX" secondItem="f3d-zD-0Ux" secondAttribute="centerX" id="j4k-T3-ZsO"/>
-                                    <constraint firstAttribute="bottom" secondItem="kkK-II-gjw" secondAttribute="bottom" constant="2" id="lS0-xc-fe7"/>
+                                    <constraint firstAttribute="bottom" secondItem="kkK-II-gjw" secondAttribute="bottom" constant="15" id="lS0-xc-fe7"/>
                                     <constraint firstItem="kkK-II-gjw" firstAttribute="width" secondItem="f3d-zD-0Ux" secondAttribute="width" id="xQy-sM-cPL"/>
                                     <constraint firstItem="HGw-HS-FsY" firstAttribute="centerX" secondItem="f3d-zD-0Ux" secondAttribute="centerX" id="z4N-mG-lcJ"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright @ 2018 The Healthy Way" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tba-qY-A7a" userLabel="copyright">
+                                <rect key="frame" x="102" y="655" width="171" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="RmJ-jG-jfZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="o3y-qN-nZi" firstAttribute="trailing" secondItem="f3d-zD-0Ux" secondAttribute="trailing" constant="2" id="FNL-mr-MLC"/>
                             <constraint firstItem="f3d-zD-0Ux" firstAttribute="leading" secondItem="o3y-qN-nZi" secondAttribute="leading" constant="2" id="G5c-vO-n3M"/>
+                            <constraint firstItem="tba-qY-A7a" firstAttribute="centerX" secondItem="o3y-qN-nZi" secondAttribute="centerX" id="GjI-I4-ZZd"/>
                             <constraint firstItem="o3y-qN-nZi" firstAttribute="bottom" secondItem="f3d-zD-0Ux" secondAttribute="bottom" constant="2" id="Pi7-Fa-H1d"/>
                             <constraint firstItem="o3y-qN-nZi" firstAttribute="top" secondItem="f3d-zD-0Ux" secondAttribute="top" constant="2" id="nfs-Ui-ahF"/>
+                            <constraint firstItem="o3y-qN-nZi" firstAttribute="bottom" secondItem="tba-qY-A7a" secondAttribute="bottom" constant="2" id="pAo-PI-4b2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="o3y-qN-nZi"/>
                     </view>
                     <connections>
+                        <outlet property="copyright" destination="tba-qY-A7a" id="jwP-ys-ZA0"/>
                         <outlet property="email" destination="8tf-j7-aoi" id="dLn-fx-WSV"/>
                         <outlet property="message" destination="kkK-II-gjw" id="F9C-CS-miF"/>
                         <segue destination="VDt-GO-xjI" kind="show" identifier="segueFromResetToClientID" id="d97-dW-cgA"/>
@@ -686,16 +746,25 @@
                                         </subviews>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="r99-yK-kuJ" userLabel="Message Text View">
-                                        <rect key="frame" x="-0.5" y="386.5" width="371" height="258.5"/>
+                                        <rect key="frame" x="-0.5" y="373.5" width="371" height="258.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright @ 2018 The Healthy Way" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hX-VN-Muv" userLabel="copyright">
+                                        <rect key="frame" x="100" y="637" width="171" height="10"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="L2C-4g-ark"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="ePN-5k-2fJ" firstAttribute="top" secondItem="loy-Bi-VV7" secondAttribute="top" constant="50" id="5re-Ic-pDZ"/>
-                                    <constraint firstAttribute="bottom" secondItem="r99-yK-kuJ" secondAttribute="bottom" constant="2" id="DEV-ox-IOQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="r99-yK-kuJ" secondAttribute="bottom" constant="15" id="DEV-ox-IOQ"/>
                                     <constraint firstItem="r99-yK-kuJ" firstAttribute="width" secondItem="loy-Bi-VV7" secondAttribute="width" id="NKk-Ok-SWQ"/>
                                     <constraint firstItem="ltS-mS-Llh" firstAttribute="top" secondItem="loy-Bi-VV7" secondAttribute="top" constant="3" id="Oak-wj-k7p"/>
                                     <constraint firstItem="ePN-5k-2fJ" firstAttribute="centerX" secondItem="loy-Bi-VV7" secondAttribute="centerX" id="anS-zz-WiW"/>
@@ -707,7 +776,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="cbo-iM-npH" firstAttribute="bottom" secondItem="3hX-VN-Muv" secondAttribute="bottom" constant="2" id="5lU-vN-0MM"/>
                             <constraint firstItem="cbo-iM-npH" firstAttribute="bottom" secondItem="loy-Bi-VV7" secondAttribute="bottom" constant="2" id="Tcu-Dc-ydA"/>
+                            <constraint firstItem="3hX-VN-Muv" firstAttribute="centerX" secondItem="cbo-iM-npH" secondAttribute="centerX" id="UwQ-rd-pH1"/>
                             <constraint firstItem="cbo-iM-npH" firstAttribute="top" secondItem="loy-Bi-VV7" secondAttribute="top" constant="2" id="cAf-r3-8ze"/>
                             <constraint firstItem="loy-Bi-VV7" firstAttribute="leading" secondItem="cbo-iM-npH" secondAttribute="leading" constant="2" id="csC-pQ-6Vr"/>
                             <constraint firstItem="cbo-iM-npH" firstAttribute="trailing" secondItem="loy-Bi-VV7" secondAttribute="trailing" constant="2" id="rd3-Fg-5qD"/>
@@ -716,6 +787,7 @@
                     </view>
                     <connections>
                         <outlet property="confirmPassword" destination="C3H-z7-OZ2" id="n5L-PO-2yQ"/>
+                        <outlet property="copyright" destination="3hX-VN-Muv" id="guE-dP-AeU"/>
                         <outlet property="email" destination="Mya-92-T5Z" id="Q2M-m5-FUU"/>
                         <outlet property="message" destination="r99-yK-kuJ" id="jiF-Qc-i1f"/>
                         <outlet property="password" destination="5vk-I3-TBc" id="ydM-JC-ofJ"/>
@@ -726,13 +798,68 @@
             </objects>
             <point key="canvasLocation" x="79" y="913"/>
         </scene>
+        <!--Healthy Way Loading-->
+        <scene sceneID="End-zk-qtW">
+            <objects>
+                <viewController title="Healthy Way Loading" id="DK9-m8-rdZ" userLabel="Healthy Way Loading" customClass="LoadingPleaseWaitViewController" customModule="HealthyWayAdmin" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AXi-eK-HUN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright @ 2018 The Healthy Way" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZI-E4-oxM" userLabel="copyright">
+                                <rect key="frame" x="16" y="655" width="343" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="3sQ-Dz-zLO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRX-4e-nEg" userLabel="Content">
+                                <rect key="frame" x="2" y="22" width="371" height="631"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hwadmin1024" translatesAutoresizingMaskIntoConstraints="NO" id="scA-70-KcL" userLabel="Healthy Way Icon">
+                                        <rect key="frame" x="8" y="8" width="355" height="615"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="scA-70-KcL" secondAttribute="trailing" constant="8" id="3tg-jo-dDd"/>
+                                    <constraint firstAttribute="bottom" secondItem="scA-70-KcL" secondAttribute="bottom" constant="8" id="8Rs-bh-85k"/>
+                                    <constraint firstItem="scA-70-KcL" firstAttribute="leading" secondItem="VRX-4e-nEg" secondAttribute="leading" constant="8" id="93x-KI-hrp"/>
+                                    <constraint firstItem="scA-70-KcL" firstAttribute="top" secondItem="VRX-4e-nEg" secondAttribute="top" constant="8" id="k6y-KC-PBQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VvC-Wm-lxp" firstAttribute="trailing" secondItem="kZI-E4-oxM" secondAttribute="trailing" constant="16" id="Co5-mq-o4C"/>
+                            <constraint firstItem="kZI-E4-oxM" firstAttribute="centerX" secondItem="VvC-Wm-lxp" secondAttribute="centerX" id="GOg-TE-gaI"/>
+                            <constraint firstItem="VvC-Wm-lxp" firstAttribute="trailing" secondItem="VRX-4e-nEg" secondAttribute="trailing" constant="2" id="U7D-vC-lYB"/>
+                            <constraint firstItem="VRX-4e-nEg" firstAttribute="top" secondItem="VvC-Wm-lxp" secondAttribute="top" constant="2" id="aJ8-zZ-JOd"/>
+                            <constraint firstItem="VRX-4e-nEg" firstAttribute="leading" secondItem="VvC-Wm-lxp" secondAttribute="leading" constant="2" id="aec-BG-QSp"/>
+                            <constraint firstItem="VvC-Wm-lxp" firstAttribute="bottom" secondItem="kZI-E4-oxM" secondAttribute="bottom" constant="2" id="bI9-6L-yfB"/>
+                            <constraint firstItem="kZI-E4-oxM" firstAttribute="leading" secondItem="VvC-Wm-lxp" secondAttribute="leading" constant="16" id="x3b-zO-Tg5"/>
+                            <constraint firstItem="kZI-E4-oxM" firstAttribute="top" secondItem="VRX-4e-nEg" secondAttribute="bottom" constant="2" id="xWD-O4-ngM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VvC-Wm-lxp"/>
+                    </view>
+                    <connections>
+                        <outlet property="copyright" destination="kZI-E4-oxM" id="eot-iL-vZS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jmY-E0-Git" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2954" y="101"/>
+        </scene>
     </scenes>
     <resources>
         <image name="hwIcon" width="30" height="30"/>
+        <image name="hwadmin1024" width="1024" height="1024"/>
         <image name="mailboxButton" width="25" height="25"/>
         <image name="settingsTab" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8Lf-gK-gv5"/>
+        <segue reference="d97-dW-cgA"/>
     </inferredMetricsTieBreakers>
 </document>
