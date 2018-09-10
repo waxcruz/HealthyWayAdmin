@@ -202,7 +202,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dd7-uM-ExZ" userLabel="Email search">
                                         <rect key="frame" x="1.5" y="34" width="367" height="30"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="waxcoder@yahoo.com" borderStyle="roundedRect" placeholder="enter client email address" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="g4A-vI-83y" userLabel="email">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter client email address" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="g4A-vI-83y" userLabel="email">
                                                 <rect key="frame" x="2" y="0.0" width="363" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -223,7 +223,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xX-b4-KgC" userLabel="Journal Contents">
                                         <rect key="frame" x="-0.5" y="66" width="371" height="321.5"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="client journal" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5B-cC-Yo5" userLabel="journal">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5B-cC-Yo5" userLabel="journal">
                                                 <rect key="frame" x="2" y="2" width="367" height="317.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -257,7 +257,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFm-jH-KBS" userLabel="Message">
                                         <rect key="frame" x="0.0" y="584" width="371" height="32"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Messages" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4cM-gF-9Js" userLabel="message">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4cM-gF-9Js" userLabel="message">
                                                 <rect key="frame" x="2" y="2" width="367" height="28"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
