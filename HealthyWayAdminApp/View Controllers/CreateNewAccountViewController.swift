@@ -71,14 +71,7 @@ class CreateNewAccountViewController: UIViewController {
         password.resignFirstResponder()
         confirmPassword.resignFirstResponder()
         message.text = ""
-        
-        if Auth.auth().currentUser != nil {
-            do {
-                try Auth.auth().signOut()
-            } catch {
-                print("CreateNewAccountViewController, Sign out failed")
-            }
-        }
+        modelController.signoutUser(errorHandler: authErrorDisplay)
         emailEntered = email.text
         passwordEntered = password.text
         confirmPasswordEntered = confirmPassword.text
@@ -86,49 +79,58 @@ class CreateNewAccountViewController: UIViewController {
             message.text = "Passwords mismatched. Try again"
             return
         }
-        Auth.auth().createUser(withEmail: emailEntered!, password: passwordEntered!) { (authResult, error) in
-            // ...
-            guard let user = authResult?.user else { return }
-            guard let email = authResult?.user.email else { return }
-            // write to users node
-            self.ref.child("users").child(user.uid).setValue(["email": self.emailEntered!, "isAdmin": true]) {
-                (error:Error?, ref:DatabaseReference) in
-                if let error = error {
-                    self.message.text = "Account creation failed: \(error)."
-                } else {
-                    self.message.text = "Account creation in progress"
-                }
-            }
-            // write to emails node
-            let keyEmail = makeFirebaseEmailKey(email: email)
-            self.ref.child("emails").child(keyEmail).setValue(["uid": user.uid]) {
-                (error:Error?, ref:DatabaseReference) in
-                if let error = error {
-                    self.message.text = "Account creation failed: \(error)."
-                } else {
-                    self.message.text = "Account created!"
-                }
-            }
-        }
-        // authentication complete, show client view
-        performSegue(withIdentifier: Constants.SEGUE_FROM_CREATE_TO_CLIENT_ID, sender: nil)
+        modelController.createAuthUserNode(userEmail: emailEntered!, userPassword: passwordEntered!, errorHandler: authErrorDisplay, handler : creationOfClientSucceed)
 }
+        // MARK - handlers
+
+
+    func creationOfClientSucceed() {
+        // authentication complete, add client to Users node
+        message.text = "Client account created"
+        createClientInUsersNode()
+        
+    }
+
+
+    func authErrorDisplay(errorMessage : String) {
+        message.text = errorMessage
+    }
     
     
+    func databaseErrorDisplay(errorMessage : String) {
+        message.text = errorMessage
+    }
+    
+    func createClientInUsersNode() {
+        modelController.createUserInUsersNode(userUID: modelController.signedinUID!, userEmail: emailEntered!, errorHandler: databaseErrorDisplay, handler: createClientInEmailsNode)
+    }
+    
+    func createClientInEmailsNode() {
+        message.text = "Client identity created"
+        modelController.createEmailInEmailsNode(userUID: modelController.signedinUID!, userEmail: emailEntered!, errorHandling: databaseErrorDisplay, handler: completedClientCreationInDatabase)
+    }
+    
+    func completedClientCreationInDatabase() {
+        message.text = "Client email created"
+        performSegue(withIdentifier: Constants.SEGUE_FROM_CREATE_TO_CLIENT_ID, sender: nil)
+    }
+
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
     
-    
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let vc = segue.destination
+        if vc .isKind(of: ClientViewController.self) {
+            (vc as! ClientViewController).modelController = modelController
+        }
     }
-    */
+
 
 }

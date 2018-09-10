@@ -7,11 +7,10 @@
 //
 
 import UIKit
-import Firebase
 import MessageUI
 import HealthyWayFramework
 import Charts
-    
+
     
 
 
@@ -25,6 +24,7 @@ class ClientViewController: UIViewController, MFMailComposeViewControllerDelegat
     @IBOutlet weak var message: UITextView!
     @IBOutlet weak var lineChart: LineChartView!
     @IBOutlet weak var copyright: UILabel!
+    @IBOutlet weak var mailboxButton: UIButton!
     
     
     // MARK - properties
@@ -32,17 +32,9 @@ class ClientViewController: UIViewController, MFMailComposeViewControllerDelegat
     var clientUID : String?
     
     // MARK - Firebase properties
-    var ref: DatabaseReference!
-    var handle: AuthStateDidChangeListenerHandle?
     var clientNode : [String : Any?] = [:] // key is node type journal, settings, and mealContent
-    var usersHandle : DatabaseHandle?
-    var usersRef : DatabaseReference?
     var uid : String?
-    var emailsHandle : DatabaseHandle?
-    var emailsRef : DatabaseReference?
     var firebaseEmail : String? // email with periods replaced by commas
-    var journalRef : DatabaseReference?
-    var journalHandle : DatabaseHandle?
 
     // MARK - output
     var htmlLayout : String?
@@ -51,11 +43,12 @@ class ClientViewController: UIViewController, MFMailComposeViewControllerDelegat
         super.viewDidLoad()
         copyright.text = makeCopyright()
         uid = ""
-        htmlLayout = ""
-        ref = Database.database().reference()
+        htmlLayout = nil
+        mailboxButton.isHidden = true
         clientEmail.addTarget(self, action: #selector(SignInViewController.textFieldDidEnd(_:)), for: UIControlEvents.editingDidEndOnExit)
         message.textContainer.lineBreakMode = NSLineBreakMode.byWordWrapping
         lineChart.noDataText = ""
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -86,9 +79,13 @@ class ClientViewController: UIViewController, MFMailComposeViewControllerDelegat
     func assembleClientData() {
         self.journal.attributedText = nil
         self.lineChart.clear()
-        self.journal.attributedText = formatJournal(clientNode: modelController.clientNode)
+        htmlLayout = formatJournal(clientNode: modelController.clientNode)
+        let attrStr = try! NSAttributedString(
+            data: (htmlLayout?.data(using: String.Encoding.unicode, allowLossyConversion: true)!)!,
+            options:[NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
+        journal.attributedText = attrStr
         self.lineChartUpdate(clientNode: modelController.clientNode)
-
+        mailboxButton.isHidden = false
     }
     
     func errorInDatabase(message : String) {
@@ -96,6 +93,7 @@ class ClientViewController: UIViewController, MFMailComposeViewControllerDelegat
         self.journal.attributedText = nil
         self.lineChart.clear()
         self.message.text = modelController.clientErrorMessages
+        mailboxButton.isHidden = true
     }
     
     @IBAction func mailClientJournal(_ sender: Any) {
@@ -106,9 +104,8 @@ class ClientViewController: UIViewController, MFMailComposeViewControllerDelegat
         composeVC.mailComposeDelegate = self
         // Configure the fields of the interface.
         composeVC.setToRecipients(["waxcruz@yahoo.com"])
-        composeVC.setSubject("Journal")
-        let myJournal = ""
-        composeVC.setMessageBody(myJournal, isHTML: true)
+        composeVC.setSubject("Journal (easier to read in landscape mode)")
+        composeVC.setMessageBody(htmlLayout!, isHTML: true)
         
         // Present the view controller modally.
         self.present(composeVC, animated: true, completion: nil)

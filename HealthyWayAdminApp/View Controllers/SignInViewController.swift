@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import FirebaseAuth
-import Firebase
+
 import HealthyWayFramework
 
 class SignInViewController: UIViewController {
@@ -61,7 +60,7 @@ class SignInViewController: UIViewController {
     @IBAction func login(_ sender: Any) {
         email.resignFirstResponder()
         password.resignFirstResponder()
-        modelController.signoutUser()
+        modelController.signoutUser(errorHandler: authErrorDisplay)
         emailEntered = email.text
         passwordEntered = password.text
         modelController.loginUser(email: emailEntered!, password: passwordEntered!, errorHandler: authErrorDisplay, handler: getUserData)

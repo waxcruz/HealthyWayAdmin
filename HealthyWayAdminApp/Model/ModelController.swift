@@ -27,10 +27,14 @@ class ModelController
     var mealContentsInFirebase : Dictionary? = [:]
     var clientNode : [String : Any?] = [:] // key is node type journal, settings, and mealContent
     var clientErrorMessages : String = ""
+    var signedinUID : String?
+    var signedinEmail : String?
     // MARK: - methods
     
     func startModel(){
         ref = Database.database().reference()
+        signedinUID = nil
+        signedinEmail = nil
     }
     
     func stopModel(){
@@ -408,22 +412,68 @@ class ModelController
             if user == nil {
                 errorHandler((error?.localizedDescription)!)
             } else {
+                self.signedinUID = user?.user.uid
+                self.signedinEmail = user?.user.email
+                handler()
+            }
+        }
+    }
+ 
+    
+    
+    func signoutUser(errorHandler : @escaping (_ : String) -> Void) {
+        if Auth.auth().currentUser?.displayName != nil {
+            do {
+                print("Signing out user: ", Auth.auth().currentUser?.displayName! ?? "unknown user")
+                try Auth.auth().signOut()
+                signedinUID = nil
+                signedinEmail = nil
+            } catch {
+                errorHandler("Sign out failed")
+            }
+        }
+
+    }
+    func signoutUser(errorHandler : @escaping (_ : String) -> Void,  handler : @escaping ()-> Void) {
+        if Auth.auth().currentUser?.uid != nil {
+            do {
+                print("Signing out user: ", Auth.auth().currentUser?.email! ?? "unknown user")
+                try Auth.auth().signOut()
+                signedinUID = nil
+                signedinEmail = nil
+                handler()
+            } catch {
+                errorHandler("Sign out failed")
+            }
+        }
+        
+    }
+
+    func passwordReset(clientEmail email : String, errorHandler : @escaping (_ : String) -> Void, handler : @escaping () -> Void) {
+        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+            // error
+            if let checkError = error {
+                let message = "Reset email failure: \(checkError.localizedDescription)"
+                errorHandler(message)
+            } else {
+                handler()
+            }
+        }
+
+    }
+    
+    func updatePassword(newPassword : String, errorHandler : @escaping (_ : String) -> Void, handler : @escaping () -> Void) {
+        Auth.auth().currentUser?.updatePassword(to:newPassword) {(error) in
+            if error != nil {
+                let message = "Failed to update new password: \(error!.localizedDescription)"
+                errorHandler(message)
+            } else {
                 handler()
             }
         }
     }
     
-    func signoutUser() {
-        if Auth.auth().currentUser?.displayName != nil {
-            do {
-                print("Signing out user: ", Auth.auth().currentUser?.displayName! ?? "unknown user")
-                try Auth.auth().signOut()
-            } catch {
-                print("Sign out failed")
-            }
-        }
-
-    }
+    
     
     func checkFirebaseConnected(handler : @escaping () -> Void) -> Void {
         
@@ -484,7 +534,47 @@ class ModelController
             errorHandler(self.clientErrorMessages)
         }
     }
+
+    func createAuthUserNode(userEmail emailEntered : String, userPassword passwordEntered : String, errorHandler : @escaping (_ : String) -> Void,  handler : @escaping ()-> Void) {
+        Auth.auth().createUser(withEmail: emailEntered, password: passwordEntered) { (authResult, error) in
+            // ...
+            self.signedinUID = authResult?.user.uid
+            self.signedinEmail = authResult?.user.email
+            if self.signedinUID == nil {
+                let firebaseError = "Account creation failed: "
+                    + (error?.localizedDescription)!
+                errorHandler(firebaseError)
+            }else {
+                handler()
+            }
+        }
+    }
+                
+    func createUserInUsersNode(userUID uid : String, userEmail email : String, errorHandler : @escaping (_ : String) -> Void,  handler : @escaping ()-> Void) {
+        self.ref.child("users").child(uid).setValue(["email": email, "isAdmin": true]) {
+            (error:Error?, ref:DatabaseReference) in
+            if let checkError = error {
+                errorHandler("Account creation failed: \(checkError).")
+                return
+            } else {
+                handler()
+            }
+        }
+    }
     
+    func createEmailInEmailsNode(userUID uid : String, userEmail email : String, errorHandling : @escaping (_ : String) -> Void, handler : @escaping () -> Void) {
+        let keyEmail = makeFirebaseEmailKey(email: email)
+        self.ref.child("emails").child(keyEmail).setValue(["uid" : uid]) {
+            (error : Error?, ref: DatabaseReference) in
+                if let checkError = error {
+                    errorHandling("Email creation failed:\(checkError).")
+                    return
+                } else {
+                    handler()
+            }
+        }
+    }
+                
 }
 
 

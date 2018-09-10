@@ -27,14 +27,11 @@ class ForgottenPasswordViewController: UIViewController {
     @IBOutlet weak var copyright: UILabel!
     
     // MARK - Firebase properties
-    var ref: DatabaseReference!
-    var handle: AuthStateDidChangeListenerHandle?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         copyright.text = makeCopyright()
-        ref = Database.database().reference()
-        email.addTarget(self, action: #selector(ForgottenPasswordViewController.textFieldDidEnd(_:)), for: UIControlEvents.editingDidEndOnExit)
+         email.addTarget(self, action: #selector(ForgottenPasswordViewController.textFieldDidEnd(_:)), for: UIControlEvents.editingDidEndOnExit)
         message.textContainer.lineBreakMode = NSLineBreakMode.byWordWrapping
     }
 
@@ -44,16 +41,11 @@ class ForgottenPasswordViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            // ...
-            NSLog("user sign-in state changed")
-        }
         message.text = Constants.NOTICE_RESET_PASSWORD
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        Auth.auth().removeStateDidChangeListener(handle!)
     }
     
 
@@ -65,26 +57,21 @@ class ForgottenPasswordViewController: UIViewController {
     @IBAction func signIn(_ sender: Any) {
         email.resignFirstResponder()
         message.text = ""
-        if Auth.auth().currentUser != nil {
-            do {
-                try Auth.auth().signOut()
-            } catch {
-                print("ForgottenPasswordViewController, Sign out failed")
-            }
-        }
+        modelController.signoutUser(errorHandler: errorMessage)
         emailEntered = email.text
         // temporary check until Chel decides how to reset passwords
-        Auth.auth().sendPasswordReset(withEmail: emailEntered!) { (error) in
-            // error
-            if let error = error {
-                self.message.text = "Reset email failure: \(error.localizedDescription)"
-            } else {
-                self.dismiss(animated: true, completion: nil)
-            }
-        }
+        modelController.passwordReset(clientEmail : emailEntered!, errorHandler : errorMessage, handler : sendEmailInstructions)
     }
 
+    func errorMessage(error : String) {
+        message.text = error
+    }
 
+    func sendEmailInstructions() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

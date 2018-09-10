@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import FirebaseAuth
-import Firebase
 import HealthyWayFramework
 
 class ChangePasswordViewController: UIViewController {
@@ -20,19 +18,15 @@ class ChangePasswordViewController: UIViewController {
     @IBOutlet weak var newPassword: UITextField!
     @IBOutlet weak var confirmPassword: UITextField!
     @IBOutlet weak var message: UITextView!
-    // MARK - Firebase properties
-    var ref: DatabaseReference!
-    var handle: AuthStateDidChangeListenerHandle?
     // MARK - properties
     var oldPasswordEntered : String?
     var newPasswordEntered : String?
     var confirmPasswordEntered : String?
-    
+    var staffEmail : String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         copyright.text = makeCopyright()
-        ref = Database.database().reference()
         oldPassword.addTarget(self, action: #selector(ChangePasswordViewController.textFieldDidEnd(_:)), for: UIControlEvents.editingDidEndOnExit)
         newPassword.addTarget(self, action: #selector(ChangePasswordViewController.textFieldDidEnd(_:)), for: UIControlEvents.editingDidEndOnExit)
         confirmPassword.addTarget(self, action: #selector(ChangePasswordViewController.textFieldDidEnd(_:)), for: UIControlEvents.editingDidEndOnExit)
@@ -41,15 +35,10 @@ class ChangePasswordViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            // ...
-            NSLog("ChangePassword: user sign-in state changed")
-        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        Auth.auth().removeStateDidChangeListener(handle!)
     }
     
     @objc func textFieldDidEnd(_ textField: UITextField){
@@ -62,7 +51,7 @@ class ChangePasswordViewController: UIViewController {
         newPassword.resignFirstResponder()
         confirmPassword.resignFirstResponder()
         message.text = ""
-        let authenticatedEmail = Auth.auth().currentUser?.email
+        let authenticatedUID = modelController.signedinUID
         oldPasswordEntered = oldPassword.text
         newPasswordEntered = newPassword.text
         confirmPasswordEntered = confirmPassword.text
@@ -70,32 +59,41 @@ class ChangePasswordViewController: UIViewController {
             message.text = "Passwords mismatched. Try again"
             return
         }
-        if Auth.auth().currentUser != nil {
-            do {
-                try Auth.auth().signOut()
-                Auth.auth().signIn(withEmail: authenticatedEmail!, password: oldPasswordEntered!) { (user, error) in
-                    if user == nil {
-                        self.message.text = error?.localizedDescription
-                        return
-                    } else {
-                        Auth.auth().currentUser?.updatePassword(to: self.newPasswordEntered!) { (error) in
-                            if error != nil {
-                                self.message.text = "Failed to update new password: \(error!.localizedDescription)"
-                                return
-                            } else {
-                                self.message.text = "Password change succeeded"
-                                self.dismiss(animated: true, completion: nil)
-                            }
-                        }
-                    }
-                }
-
-            } catch {
-                message.text = "You must be signed in"
-            }
+        if authenticatedUID != nil {
+            // force sign out of current user to prevent fraudulent changes
+            staffEmail = modelController.signedinEmail // retain email 
+            modelController.signoutUser(errorHandler: authErrorMessage, handler: loginStaff)
+        } else {
+            message.text = "You must be signed in"
         }
     }
 
+    // Mark - helper functions
+    
+    func loginStaff() {
+        // verify user's identity
+        oldPasswordEntered = oldPassword.text
+        modelController.loginUser(email: staffEmail!, password: oldPasswordEntered!, errorHandler: authErrorMessage, handler: updateStaffPassword)
+    }
+    
+    func updateStaffPassword() {
+        // make the password change
+        newPasswordEntered = newPassword.text
+        modelController.updatePassword(newPassword: newPasswordEntered!, errorHandler: authErrorMessage, handler: changedPasswordSuccessfully)
+    }
+    
+    
+    
+    func authErrorMessage(message : String) {
+        self.message.text = message
+    }
+    
+    func changedPasswordSuccessfully() {
+        self.message.text = "Password change succeeded"
+        performSegue(withIdentifier: "unwindFromChangePasswordToSignin", sender: self)
+    }
+    
+    
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
