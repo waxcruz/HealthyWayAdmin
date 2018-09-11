@@ -19,7 +19,7 @@
 		3402AD94212E4FE700A6C650 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34D4D8B321299A9B00BDAFF5 /* Assets.xcassets */; };
 		3402AD95212E4FE700A6C650 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D4D8B021299A9900BDAFF5 /* Main.storyboard */; };
 		3402AD9E212F107100A6C650 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3402AD9D212F107100A6C650 /* SettingsViewController.swift */; };
-		348625F221359257005BA64D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 348625F121359256005BA64D /* GoogleService-Info.plist */; };
+		34741927214811A200F37221 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34741926214811A200F37221 /* GoogleService-Info.plist */; };
 		34ACF4A92142D0EE0046EBCD /* LoadingPleaseWaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ACF4A82142D0EE0046EBCD /* LoadingPleaseWaitViewController.swift */; };
 		34B065A4213910DC0062B727 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B065A2213910DC0062B727 /* ModelController.swift */; };
 		34BD83F3213D97C00059C714 /* HealthyWayFramework.xcodeproj in Frameworks */ = {isa = PBXBuildFile; fileRef = 34BD83ED213D97840059C714 /* HealthyWayFramework.xcodeproj */; };
@@ -64,7 +64,7 @@
 		3402AD9B212E4FE700A6C650 /* HealthyWayAdmin copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "HealthyWayAdmin copy-Info.plist"; path = "/Users/waxcruz/Developer/HealthyWayAdminApp/HealthyWayAdmin/HealthyWayAdmin copy-Info.plist"; sourceTree = "<absolute>"; };
 		3402AD9C212EFD8B00A6C650 /* HealthyWayAdmin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HealthyWayAdmin.entitlements; sourceTree = "<group>"; };
 		3402AD9D212F107100A6C650 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		348625F121359256005BA64D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		34741926214811A200F37221 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		348B8733212CE251000E0320 /* CreateNewAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewAccountViewController.swift; sourceTree = "<group>"; };
 		348B8735212CE26D000E0320 /* ClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViewController.swift; sourceTree = "<group>"; };
 		348B8737212CE2AA000E0320 /* ForgottenPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgottenPasswordViewController.swift; sourceTree = "<group>"; };
@@ -167,8 +167,8 @@
 		34D4D8AB21299A9900BDAFF5 /* HealthyWayAdminApp */ = {
 			isa = PBXGroup;
 			children = (
+				34741926214811A200F37221 /* GoogleService-Info.plist */,
 				34B065A1213910DC0062B727 /* Model */,
-				348625F121359256005BA64D /* GoogleService-Info.plist */,
 				34CF0BD2213338090075F492 /* SourceInHealthyWayApp */,
 				348B873B212DA4A8000E0320 /* GlobalConstants.swift */,
 				348B8732212CE228000E0320 /* View Controllers */,
@@ -272,7 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3402AD92212E4FE700A6C650 /* LaunchScreen.storyboard in Resources */,
-				348625F221359257005BA64D /* GoogleService-Info.plist in Resources */,
+				34741927214811A200F37221 /* GoogleService-Info.plist in Resources */,
 				3402AD94212E4FE700A6C650 /* Assets.xcassets in Resources */,
 				3402AD95212E4FE700A6C650 /* Main.storyboard in Resources */,
 			);

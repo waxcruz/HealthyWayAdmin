@@ -411,6 +411,7 @@ class ModelController
             // ...
             if user == nil {
                 errorHandler((error?.localizedDescription)!)
+                return
             } else {
                 self.signedinUID = user?.user.uid
                 self.signedinEmail = user?.user.email
@@ -430,6 +431,7 @@ class ModelController
                 signedinEmail = nil
             } catch {
                 errorHandler("Sign out failed")
+                return
             }
         }
 
@@ -467,6 +469,7 @@ class ModelController
             if error != nil {
                 let message = "Failed to update new password: \(error!.localizedDescription)"
                 errorHandler(message)
+                return
             } else {
                 handler()
             }
@@ -502,6 +505,7 @@ class ModelController
             if clientUID == nil {
                 self.clientErrorMessages = "No client found with that email address"
                 errorHandler(self.clientErrorMessages)
+                return
             }
             let usersRef = self.ref.child("users").child(clientUID!)
             usersRef.observeSingleEvent(of: .value, with:  { (snapshot)
@@ -520,18 +524,22 @@ class ModelController
                         self.clientErrorMessages = "Encountered error, " + error.localizedDescription +
                         ", searching for client data"
                         errorHandler(self.clientErrorMessages)
+                        return
                     }
                 } else {
                     self.clientErrorMessages = "Mismatch between emails and uids."
                     errorHandler(self.clientErrorMessages)
+                    return
                 }
             }) { (error) in
                 self.clientErrorMessages = "Encountered error, " + error.localizedDescription + ", searching for client UID"
                 errorHandler(self.clientErrorMessages)
+                return
             }
         })  { (error) in
             self.clientErrorMessages = "Encountered error, " + error.localizedDescription + ", searching for client email"
             errorHandler(self.clientErrorMessages)
+            return
         }
     }
 
@@ -544,6 +552,7 @@ class ModelController
                 let firebaseError = "Account creation failed: "
                     + (error?.localizedDescription)!
                 errorHandler(firebaseError)
+                return
             }else {
                 handler()
             }

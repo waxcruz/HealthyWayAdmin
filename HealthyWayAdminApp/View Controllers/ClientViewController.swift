@@ -79,7 +79,7 @@ class ClientViewController: UIViewController, MFMailComposeViewControllerDelegat
     func assembleClientData() {
         self.journal.attributedText = nil
         self.lineChart.clear()
-        htmlLayout = formatJournal(clientNode: modelController.clientNode)
+        htmlLayout = formatJournal(clientNode: modelController.clientNode, isEmail: false)
         let attrStr = try! NSAttributedString(
             data: (htmlLayout?.data(using: String.Encoding.unicode, allowLossyConversion: true)!)!,
             options:[NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
@@ -103,10 +103,10 @@ class ClientViewController: UIViewController, MFMailComposeViewControllerDelegat
         let composeVC = MFMailComposeViewController()
         composeVC.mailComposeDelegate = self
         // Configure the fields of the interface.
-        composeVC.setToRecipients(["waxcruz@yahoo.com"])
-        composeVC.setSubject("Journal (easier to read in landscape mode)")
-        composeVC.setMessageBody(htmlLayout!, isHTML: true)
-        
+        composeVC.setToRecipients([modelController.signedinEmail!])
+        composeVC.setSubject("Journal")
+        htmlLayout = formatJournal(clientNode: modelController.clientNode, isEmail: true)
+        composeVC.setMessageBody(htmlLayout!, isHTML: true)        
         // Present the view controller modally.
         self.present(composeVC, animated: true, completion: nil)
     }
