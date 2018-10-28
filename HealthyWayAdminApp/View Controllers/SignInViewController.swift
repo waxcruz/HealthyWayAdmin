@@ -33,6 +33,8 @@ class SignInViewController: UIViewController {
         email.addTarget(self, action: #selector(SignInViewController.textFieldDidEnd(_:)), for: UIControlEvents.editingDidEndOnExit)
         password.addTarget(self, action: #selector(SignInViewController.textFieldDidEnd(_:)), for: UIControlEvents.editingDidEndOnExit)
         message.textContainer.lineBreakMode = NSLineBreakMode.byWordWrapping
+        email.text = "wmyronw@yahoo.com"
+        password.text = "waxwax"
     }
 
     @objc func textFieldDidEnd(_ textField: UITextField){
