@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Firebase
 import HealthyWayFramework
 
 class SignInViewController: UIViewController {
@@ -33,8 +33,8 @@ class SignInViewController: UIViewController {
         email.addTarget(self, action: #selector(SignInViewController.textFieldDidEnd(_:)), for: UIControlEvents.editingDidEndOnExit)
         password.addTarget(self, action: #selector(SignInViewController.textFieldDidEnd(_:)), for: UIControlEvents.editingDidEndOnExit)
         message.textContainer.lineBreakMode = NSLineBreakMode.byWordWrapping
-        email.text = "wmyronw@yahoo.com"
-        password.text = "waxwax"
+        email.text = ""
+        password.text = ""
     }
 
     @objc func textFieldDidEnd(_ textField: UITextField){
@@ -44,6 +44,11 @@ class SignInViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if let uid = Auth.auth().currentUser?.uid {
+            modelController.signedinUID = uid
+            modelController.signedinEmail = Auth.auth().currentUser?.email
+            getUserData()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -75,7 +80,10 @@ class SignInViewController: UIViewController {
     
     // MARK - process data
     func getUserData() {
+        DispatchQueue.main.async(){
             self.performSegue(withIdentifier: Constants.SEGUE_FROM_SIGNIN_TO_CLIENT_ID, sender: nil)
+        }
+
     }
     
     
