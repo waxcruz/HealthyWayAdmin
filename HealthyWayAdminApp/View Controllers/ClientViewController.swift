@@ -265,6 +265,8 @@
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             clientEmail.text = restoreEmail(firebaseEmailKey: filterdListOfEmails[indexPath.row])
             searchResultsContent.isHidden = true
+            super.resignFirstResponder()
+            clientEmail.resignFirstResponder()
 
         }
 
