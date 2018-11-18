@@ -77,7 +77,12 @@
         }
         
         func gotTheListOfClientEmails() {
-            fullListOfEmails = modelController.emailsList
+            let firebaseEmails = modelController.emailsList
+            fullListOfEmails = []
+            // emailsList contents Firebase formatted emails (dot replace by comma)
+            for firebaseEmail in firebaseEmails {
+                fullListOfEmails?.append(restoreEmail(firebaseEmailKey: firebaseEmail))
+            }
             filterdListOfEmails = fullListOfEmails ?? []
         }
         
